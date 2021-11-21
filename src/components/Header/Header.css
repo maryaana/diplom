@@ -1,0 +1,14 @@
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+}
+
+.logo {
+    font-size: 24px;
+}
+
+.menu {
+    font-size: 24px;
+    color: #009FD7;
+}

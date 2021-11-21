@@ -1,0 +1,12 @@
+.heading_active {
+  color: var(--blue);
+}
+
+h1 {
+  font-style: normal;
+  font-weight: 800;
+  font-family: "Gilroy ExtraBold";
+  font-size: 85px;
+  line-height: 104px;
+  color: var(--black);
+}

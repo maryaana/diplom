@@ -11,3 +11,64 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: "Gilroy Medium";
+  src: url("./fonts/gilroy/Gilroy-Medium.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: "Gilroy Regular";
+  src: url("./fonts/gilroy/Gilroy-Regular.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: "Gilroy SemiBold";
+  src: url("./fonts/gilroy/Gilroy-SemiBold.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: "Gilroy ExtraBold";
+  src: url("./fonts/gilroy/Gilroy-ExtraBold.otf") format('opentype');
+}
+
+@font-face {
+  font-family: "Gilroy Light";
+  src: url("./fonts/gilroy/Gilroy-Light.otf") format('opentype');
+}
+
+:root {
+  --blue: #009FD7;
+  --black: #424242;
+  --white: #FFFFFF;
+  --green: #00E073;
+  --gray: #A0BFD7;
+  --dark-blue: #003B81;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gilroy Medium";
+  font-size: 18px;
+  line-height: 26px;
+}
+
+a {
+  text-decoration: unset;
+  color: unset;
+}
+
+.sectionWrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+span {
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}

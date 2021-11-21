@@ -1,0 +1,27 @@
+.contactInfoWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.subtitleContact {
+    font-size: 18px;
+    line-height: 26px;
+    color: var(--gray);
+    font-family: "Gilroy Medium";
+    font-weight: 500;
+}
+
+.contactLink {
+    font-size: 30px;
+    line-height: 35px;
+    font-family: "Gilroy Medium";
+    font-weight: 500;
+    color: var(--white);
+    transition: .3s;
+}
+
+.contactLink:hover {
+    transition: .3s;
+    color: var(--gray);
+}

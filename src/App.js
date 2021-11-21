@@ -1,24 +1,69 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import ProjectsList from "./components/ProjectsList/ProjectsList";
+import Header from "./components/Header/Header";
+import Heading from "./components/Heading/Heading";
+import ServicesList from "./components/ServicesList/ServicesList";
+import HeaderBlock from "./components/HeaderBlock/HeaderBlock";
+import "./App.css";
+import Footer from "./components/Footer/Footer";
 
 function App() {
+  let [reviews, setReviews] = useState({});
+  let [projects, setProjects] = useState({});
+
+  useEffect(async () => {
+    let response = await fetch("/getReviews", { method: "GET" });
+    response = await response.json();
+
+    if (!response.success) {
+      return;
+    }
+
+    setReviews({
+      ...reviews,
+      data: response.data,
+    });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="maxWidthWrapper">
+        <Header />
+      </div>
+      <section className="sectionWrapper">
+        <div className="headingWrapper">
+          <Heading>
+            <h1>
+              Агентство коммуникаций
+              <span className="heading_active"> digital</span>-решений
+            </h1>
+          </Heading>
+        </div>
+
+        <div className="subtitleWrapper">
+          <HeaderBlock
+            subtitle={<span>наши проекты</span>}
+            description={
+              <span>
+                Работаем в разных областях: разработка, маркетинг, дизайн,
+                автоматизация
+              </span>
+            }
+          />
+        </div>
+
+        {/* <HeaderBlock
+          subtitle={<span>услуги</span>}
+          description={<ServicesList />}
+        /> */}
+        
+      </section>
+      <div className="backgroundFooter">
+        <div className="maxWidthWrapper">
+          <Footer />
+        </div>
+      </div>
+    </>
   );
 }
 
