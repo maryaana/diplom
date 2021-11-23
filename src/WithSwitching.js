@@ -1,24 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 function WithSwitching(Component, trigger, defaultValue = false, props) {
-  const [state, setState] = useState(defaultValue);
-  console.log(props);
-  function Switcher() {
-    function handleNewState() {
-      console.log(state);
-      setState(!state);
-    }
+	const [state, setState] = useState(defaultValue);
 
-    useEffect(() => {
-      trigger?.current?.addEventListener('click', handleNewState);
+	function Switcher() {
+		function handleNewState() {
+			setState(!state);
+		}
 
-      return () => trigger?.current?.removeEventListener('click', handleNewState);
-    }, [trigger]);
+		useEffect(() => {
+			trigger?.current?.addEventListener("click", handleNewState);
 
-    return state && <Component {...props} onClose={handleNewState} />;
-  }
+			return () =>
+				trigger?.current?.removeEventListener("click", handleNewState);
+		}, [trigger]);
 
-  return <Switcher />;
+		return state && <Component {...props} onClose={handleNewState} />;
+	}
+
+	return <Switcher />;
 }
 
 export default WithSwitching;
