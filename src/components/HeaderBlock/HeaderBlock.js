@@ -1,5 +1,5 @@
-import react from "react";
-import "./HeaderBlock.css";
+import react from 'react';
+import './HeaderBlock.css';
 
 function HeaderBlock(props) {
   return (
