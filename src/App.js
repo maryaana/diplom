@@ -7,9 +7,6 @@ import HeaderBlock from "./components/HeaderBlock/HeaderBlock";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Menu from "./components/Menu/Menu";
-import WithSwitching from "./WithSwitching";
-import Test from "./components/Test/Test";
-import Modal from "./components/Modal/Modal";
 
 function App() {
 	let [reviews, setReviews] = useState({});
@@ -63,39 +60,13 @@ function App() {
 						}
 					/>
 				</div>
-
-				{/* <HeaderBlock
-          subtitle={<span>услуги</span>}
-          description={<ServicesList />}
-        /> */}
 			</section>
 			<div className="backgroundFooter">
 				<div className="maxWidthWrapper">
+					<Menu />
 					<Footer />
 				</div>
 			</div>
-
-			<div id="modalRoot"></div>
-			<Modal>
-				<div>привет</div>
-			</Modal>
-
-			{WithSwitching(Menu, ref1, false, { test: "test" })}
-			{WithSwitching(HeaderBlock, ref2, false, {
-				subtitle: "test",
-				description: "bob",
-			})}
-			{WithSwitching(HeaderBlock, ref3, false, {
-				subtitle: "test",
-				description: "no bob",
-			})}
-			<div ref={ref1}>test 1</div>
-			<div ref={ref2}>test 2</div>
-			<Test reference={ref3} />
-
-			<section className="modal">
-				{menu && <Menu onClose={handleMenuLogic} />}
-			</section>
 		</>
 	);
 }

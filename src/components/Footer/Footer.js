@@ -18,7 +18,7 @@ const Footer = () => {
             Услуги
           </a>
           <a className="linkFooter" href="#">
-            Портфолио
+            Кейсы
           </a>
           <a className="linkFooter" href="#">
             Блог

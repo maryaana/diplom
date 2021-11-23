@@ -57,6 +57,8 @@
 }
 
 .linkPrivacy {
+    font-family: "Gilroy Regular";
+    font-weight: 400;
     color: var(--white);
     transition: .3s;
 }
