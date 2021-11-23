@@ -1,10 +1,18 @@
 .headingWrapper {
-    margin-top: 120px;
+    margin-top: 240px;
 }
 
 .subtitleWrapper {
     margin-top: 320px;
     margin-bottom: 150px;
+}
+
+.maxWidthWrapperHeader {
+    width: 100%;
+    margin: auto;
+    background-color: var(--white);
+    position: fixed;
+    top: 0;
 }
 
 .maxWidthWrapper {

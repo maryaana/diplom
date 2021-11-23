@@ -6,6 +6,7 @@ import ServicesList from "./components/ServicesList/ServicesList";
 import HeaderBlock from "./components/HeaderBlock/HeaderBlock";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
+import Menu from "./components/Menu/Menu";
 
 function App() {
   let [reviews, setReviews] = useState({});
@@ -27,7 +28,7 @@ function App() {
 
   return (
     <>
-      <div className="maxWidthWrapper">
+      <div className="maxWidthWrapperHeader">
         <Header />
       </div>
       <section className="sectionWrapper">
@@ -60,6 +61,7 @@ function App() {
       </section>
       <div className="backgroundFooter">
         <div className="maxWidthWrapper">
+          <Menu />
           <Footer />
         </div>
       </div>

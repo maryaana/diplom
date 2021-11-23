@@ -1,14 +1,28 @@
 .wrapper {
     display: flex;
     justify-content: space-between;
-    padding-top: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    max-width: 1200px;
+    align-items: center;
+    margin: 0 auto;
 }
 
 .logo {
     font-size: 24px;
 }
 
-.menu {
-    font-size: 24px;
-    color: #009FD7;
+.menuButton {
+    width: 50px;
+    height: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.menuLine {
+    width: 50px;
+    height: 2px;
+    background: var(--blue);
 }

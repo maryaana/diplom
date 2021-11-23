@@ -1,34 +1,38 @@
 import react from "react";
-import "./Footer.css";
+import "./Menu.css";
+import logoDark from "./../../assets/logo_dark.png";
 import ContactInfo from "../ContactInfo/ContactInfo";
 
-const Footer = () => {
+const Menu = () => {
   return (
-    <footer className="footer">
-      <div className="flexFooterWrapper">
-        <div className="logoFooter">logo</div>
-        <div className="linksWrapper">
-          <a className="linkFooter" href="#">
+    <div className="menuModal">
+    <div className="logoMenu"><img src={logoDark} /></div>
+
+    <div className="menuContainer">
+      <div className="flexMenuWrapper">
+
+        <div className="linksMenuWrapper">
+          <a className="linkMenu" href="#">
             Главная
           </a>
-          <a className="linkFooter" href="#">
+          <a className="linkMenu" href="#">
             Об агентстве
           </a>
-          <a className="linkFooter" href="#">
+          <a className="linkMenu" href="#">
             Услуги
           </a>
-          <a className="linkFooter" href="#">
+          <a className="linkMenu" href="#">
             Кейсы
           </a>
-          <a className="linkFooter" href="#">
+          <a className="linkMenu" href="#">
             Блог
           </a>
-          <a className="linkFooter" href="#">
+          <a className="linkMenu" href="#">
             Контакты
           </a>
         </div>
 
-        <div className="contactFooterWrapper">
+        <div className="contactMenuWrapper">
           <ContactInfo
             subtitle={<span>почта</span>}
             link={"#"}
@@ -48,15 +52,9 @@ const Footer = () => {
           />
         </div>
       </div>
-
-      <div className="privacyWrapper">
-        <p className="copyright">Digital squad, 2021</p>
-        <a className="linkPrivacy" href="#">
-          Политика конфиденциальности
-        </a>
       </div>
-    </footer>
+    </div>
   );
 };
 
-export default Footer;
+export default Menu;
