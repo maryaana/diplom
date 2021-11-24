@@ -1,26 +1,32 @@
 .headingWrapper {
-    margin-top: 240px;
+	margin-top: 240px;
+}
+
+.sectionWrapper {
+	width: 100%;
+	max-width: 1200px;
+	margin: auto;
 }
 
 .subtitleWrapper {
-    margin-top: 320px;
-    margin-bottom: 150px;
+	margin-top: 320px;
+	margin-bottom: 150px;
 }
 
 .maxWidthWrapperHeader {
-    width: 100%;
-    margin: auto;
-    background-color: var(--white);
-    position: fixed;
-    top: 0;
+	width: 100%;
+	margin: auto;
+	background-color: var(--white);
+	position: fixed;
+	top: 0;
 }
 
 .maxWidthWrapper {
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
+	width: 100%;
+	max-width: 1200px;
+	margin: auto;
 }
 
 .backgroundFooter {
-    background-color: var(--dark-blue);
+	background-color: var(--dark-blue);
 }

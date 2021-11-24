@@ -1,28 +1,28 @@
 .wrapper {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    max-width: 1200px;
-    align-items: center;
-    margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	padding: 30px 0;
+	max-width: 1200px;
+	align-items: center;
+	margin: 0 auto;
+	transition: 0.3s;
 }
 
 .logo {
-    font-size: 24px;
+	font-size: 24px;
 }
 
 .menuButton {
-    width: 50px;
-    height: 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    cursor: pointer;
+	width: 50px;
+	height: 14px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	cursor: pointer;
 }
 
 .menuLine {
-    width: 50px;
-    height: 2px;
-    background: var(--blue);
+	width: 50px;
+	height: 2px;
+	background: var(--blue);
 }
