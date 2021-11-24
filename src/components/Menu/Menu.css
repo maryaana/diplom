@@ -4,24 +4,27 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-	padding-top: 50px;
+	padding-top: 30px;
 	padding-bottom: 150px;
 	background: var(--dark-blue);
-}
-
-.logoMenu {
-	font-size: 24px;
 }
 
 .menuContainer {
 	width: 100%;
 	max-width: 1200px;
+	margin: auto;
+}
+
+.flexMenuContentCenter {
+	
 }
 
 .flexMenuWrapper {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
+	margin: auto 0;
+	height: 100vh;
 }
 
 .linksMenuWrapper {
