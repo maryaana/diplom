@@ -2,23 +2,28 @@ import React from "react";
 import "./ProjectCard.css";
 
 const ProjectCard = (props) => {
-    const categories = props.categories;
+
+  function categoriesList() {
+    return props.categories.map((category, i) => <div key={i} className="categoriesProjectCard">{category}</div>);
+  };
 
     return (
         <>
           {
-            <div className="contactInfoWrapper">
-              <div className="subtitleContact">{props.subtitle}</div>
-              <a className="contactLink" href={props.link}>{props.contact}</a>
+            <div className="projectCardContainer">
+
+              <div className="backgroundProjectCard" style={{background: props.background, height: props.height}}></div>
+
+              <div className="titleProjectCard">{props.title}</div>
+
+              <div className="photoProjectCard"><img src={props.photo}/></div>
+              
+              <div className="categoriesProjectCardWrapper">{categoriesList()}</div>
+
             </div>
           }
         </>
       );
-      
-//   function mapCategories(elem, index) {
-//     return <div key={index}>{elem.text}</div>;
-//   }
-//   return <div>{props.projects.map(mapReviews)}</div>;
 };
 
 export default ProjectCard;

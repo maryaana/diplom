@@ -1,0 +1,32 @@
+.projectCardContainer {
+  width: 100%;
+}
+
+.titleProjectCard {
+  padding-top: 40px;
+  font-size: 30px;
+  line-height: 35px;
+  color: var(--black);
+}
+
+.backgroundProjectCard {
+  width: 100%;
+  height: 550px;
+}
+
+.photoProjectCard {
+}
+
+.categoriesProjectCardWrapper {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.categoriesProjectCard {
+  font-family: "Gilroy Light";
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 26px;
+  color: var(--black);
+}

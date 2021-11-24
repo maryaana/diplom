@@ -30,3 +30,16 @@
 .backgroundFooter {
 	background-color: var(--dark-blue);
 }
+
+.projectCardsWrapper {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-column-gap: 100px;
+   	grid-row-gap: 50px;
+	grid-auto-rows: minmax(min-content, max-content);
+}
+
+.projectCardsWrapper > div:nth-child(even) {
+	margin-top: 200px;
+}
