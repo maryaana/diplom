@@ -15,7 +15,7 @@ const ProjectCard = (props) => {
       {
         <div
           className="projectCardContainer"
-          style={{ gridRow: 1 + +props.row.replace(/span/, '') + 'span' }}
+          style={{ gridRow: 1 + +props.row.replace(/span/, '') + ' span' }}
         >
           <div
             className="backgroundProjectCard"

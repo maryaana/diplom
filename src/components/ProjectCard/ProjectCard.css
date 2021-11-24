@@ -1,5 +1,7 @@
 .projectCardContainer {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .titleProjectCard {
@@ -11,7 +13,8 @@
 
 .backgroundProjectCard {
   width: 100%;
-  height: calc(100% - 130px);
+  /* height: calc(100% - 130px); */
+  flex-grow: 1;
 }
 
 .photoProjectCard {
