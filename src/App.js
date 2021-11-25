@@ -10,6 +10,8 @@ import ProjectCard from "./components/ProjectCard/ProjectCard";
 import Form from "./components/Form/Form";
 import Statistics from "./components/Statistics/Statistics";
 import BlogCard from "./components/BlogCard/BlogCard";
+import WantToCollaborate from "./components/WantToCollaborate/WantToCollaborate";
+import logo1 from "./assets/logo1.png";
 import { CSSTransition } from "react-transition-group";
 
 function App() {
@@ -112,9 +114,15 @@ function App() {
           <Statistics quantity={"5 лет"} description={"опыта работы"} />
           <Statistics quantity={"> 30"} description={"завершенных проектов"} />
         </div>
+      </section>
 
-        <div className="logoWrapper"></div>
+      <div className="backgroundDarkBlue">
+        <div className="maxWidthWrapper">
+          <WantToCollaborate />
+        </div>
+      </div>
 
+      <section className="sectionWrapper">
         <div className="subtitleBlogWrapper">
           <HeaderBlock
             subtitle={<span>блог</span>}
@@ -133,18 +141,14 @@ function App() {
           />
 
           <BlogCard
-            title={
-              "Duis aute irure dolor in reprehenderit in voluptate"
-            }
+            title={"Duis aute irure dolor in reprehenderit in voluptate"}
             photo={""}
             categoty={"Разработка"}
             date={"15 сентября 2021"}
           />
 
           <BlogCard
-            title={
-              "Lorem ipsum dolor sit amet"
-            }
+            title={"Lorem ipsum dolor sit amet"}
             photo={""}
             categoty={"Маркетинг"}
             date={"2 сентября 2021"}
@@ -162,7 +166,7 @@ function App() {
 
         <Form />
       </section>
-      <div className="backgroundFooter">
+      <div className="backgroundDarkBlue">
         <div className="maxWidthWrapper">
           <Footer />
         </div>
