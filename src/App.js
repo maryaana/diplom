@@ -110,11 +110,17 @@ function App() {
           <Statistics quantity={'5 лет'} description={'опыта работы'} />
           <Statistics quantity={'> 30'} description={'завершенных проектов'} />
         </div>
+      </section>
 
-        <div className="logoWrapper"></div>
+      <div className="backgroundDarkBlue">
+        <div className="maxWidthWrapper">
+          <WantToCollaborate />
+        </div>
+      </div>
 
-        <PartnersList />
+      <PartnersList />
 
+      <section className="sectionWrapper">
         <div className="subtitleBlogWrapper">
           <HeaderBlock subtitle={<span>блог</span>} description={<span>Анонсы и новости</span>} />
         </div>
@@ -151,7 +157,7 @@ function App() {
 
         <Form />
       </section>
-      <div className="backgroundFooter">
+      <div className="backgroundDarkBlue">
         <div className="maxWidthWrapper">
           <Footer />
         </div>
