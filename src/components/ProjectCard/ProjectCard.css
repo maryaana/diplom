@@ -9,27 +9,41 @@
   font-size: 30px;
   line-height: 35px;
   color: var(--black);
-  transition: .3s;
+  transition: 0.3s;
   cursor: pointer;
 }
 
-.titleProjectCard:hover {
-    color: var(--blue);
-    transition: .3s;
+.projectCardContainer:hover .titleProjectCard {
+  color: var(--blue);
+  transition: 0.3s;
 }
 
 .backgroundProjectCard {
   width: 100%;
   flex-grow: 1;
   cursor: pointer;
-  transition: transform .2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s;
+  transition-delay: 0.1s;
 }
 
-.backgroundProjectCard:hover {
-    transform: scale(0.92);
+.projectCardContainer:hover .backgroundProjectCard {
+  transform: scale(0.92);
+  transition: 0.4s;
+  transition-delay: 0.1s;
+}
+
+.projectCardContainer:hover .photoProjectCard {
+  transform: rotateY(-180deg) rotateZ(-15deg);
+  transition: 1s;
+  transition-delay: 0.1s;
 }
 
 .photoProjectCard {
+  transition: 1s;
+  transition-delay: 0.1s;
 }
 
 .categoriesProjectCardWrapper {
@@ -44,11 +58,11 @@
   font-size: 18px;
   line-height: 26px;
   color: var(--black);
-  transition: .3s;
+  transition: 0.3s;
   cursor: pointer;
 }
 
 .categoriesProjectCard:hover {
-    color: var(--blue);
-    transition: .3s;
+  color: var(--blue);
+  transition: 0.3s;
 }

@@ -1,0 +1,72 @@
+.lastReviewsGalleryWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+}
+
+.lastReviewsGalleryInner {
+  position: relative;
+  width: 50%;
+}
+
+.lastReviewsGalleryInnerContent {
+  height: 200px;
+}
+
+.lastReviewsGalleryInnerControls {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.lastReviewsControlDisplaysWrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.lastReviewsControlArrowsWrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.lastReviewsControlArrowsWrapper svg {
+  cursor: pointer;
+}
+
+.lastReviewsControlArrowsWrapper svg path {
+  transition: stroke 0.2s;
+}
+
+.lastReviewsControlDisplay {
+  width: 50px;
+  height: 2px;
+  transition: 0.2s;
+  background: var(--gray);
+  cursor: pointer;
+}
+
+.lastReviewsControlDisplay:hover {
+  transition: 0.2s;
+  background: var(--blue);
+}
+
+.lastReviewsControlDisplayActive {
+  transition: 0.2s;
+  background: var(--blue);
+}
+
+.lastReviewsGalleryInnerContentAppearence-enter {
+  opacity: 0;
+}
+.lastReviewsGalleryInnerContentAppearence-enter-active {
+  opacity: 1;
+  transition: opacity 500ms;
+}
+.lastReviewsGalleryInnerContentAppearence-exit {
+  opacity: 1;
+}
+.lastReviewsGalleryInnerContentAppearence-exit-active {
+  opacity: 0;
+  display: none;
+  transition: opacity 0ms;
+}
