@@ -113,6 +113,8 @@ function App() {
           <Statistics quantity={"> 30"} description={"завершенных проектов"} />
         </div>
 
+        <div className="logoWrapper"></div>
+
         <div className="subtitleBlogWrapper">
           <HeaderBlock
             subtitle={<span>блог</span>}
