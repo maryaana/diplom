@@ -1,0 +1,17 @@
+.partnersWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.partnersWrapper img {
+  height: fit-content;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.partnersWrapper img:hover {
+  filter: contrast(0.3);
+  transition: 0.3s;
+}
