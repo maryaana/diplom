@@ -9,6 +9,7 @@ import Menu from "./components/Menu/Menu";
 import ProjectCard from "./components/ProjectCard/ProjectCard";
 import Form from "./components/Form/Form";
 import Statistics from "./components/Statistics/Statistics";
+import BlogCard from "./components/BlogCard/BlogCard";
 import { CSSTransition } from "react-transition-group";
 
 function App() {
@@ -106,11 +107,47 @@ function App() {
           />
         </div>
 
-		<div className="statisticsAppWrapper">
-		<Statistics quantity={"топ 500"} description={"лучших агентств"} />
-		<Statistics quantity={"5 лет"} description={"опыта работы"} />
-		<Statistics quantity={"> 30"} description={"завершенных проектов"} />
-		</div>
+        <div className="statisticsAppWrapper">
+          <Statistics quantity={"топ 500"} description={"лучших агентств"} />
+          <Statistics quantity={"5 лет"} description={"опыта работы"} />
+          <Statistics quantity={"> 30"} description={"завершенных проектов"} />
+        </div>
+
+        <div className="subtitleBlogWrapper">
+          <HeaderBlock
+            subtitle={<span>блог</span>}
+            description={<span>Анонсы и новости</span>}
+          />
+        </div>
+
+        <div className="appFlexBlogWrapper">
+          <BlogCard
+            title={
+              "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia"
+            }
+            photo={""}
+            categoty={"Автоматизация"}
+            date={"23 ноября 2021"}
+          />
+
+          <BlogCard
+            title={
+              "Duis aute irure dolor in reprehenderit in voluptate"
+            }
+            photo={""}
+            categoty={"Разработка"}
+            date={"15 сентября 2021"}
+          />
+
+          <BlogCard
+            title={
+              "Lorem ipsum dolor sit amet"
+            }
+            photo={""}
+            categoty={"Маркетинг"}
+            date={"2 сентября 2021"}
+          />
+        </div>
 
         <div className="subtitleWrapper">
           <HeaderBlock

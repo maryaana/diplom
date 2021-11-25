@@ -14,6 +14,17 @@
   margin-bottom: 150px;
 }
 
+.subtitleBlogWrapper {
+	margin-top: 200px;
+	margin-bottom: 100px;
+}
+
+.appFlexBlogWrapper {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 75px;
+}
+
 .statisticsAppWrapper {
 	display: flex;
 	flex-wrap: wrap;
