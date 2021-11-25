@@ -7,6 +7,7 @@
   padding-top: 30px;
   padding-bottom: 150px;
   background: var(--dark-blue);
+  z-index: 2;
 }
 
 .menuContainer {
@@ -16,7 +17,29 @@
   margin: auto;
 }
 
-.flexMenuContentCenter {
+.menuLogoCloseWrapper {
+	display: flex;
+	justify-content: space-between;
+	padding-right: 6px;
+}
+
+.menuCloseButton {
+	padding-top: 26px;
+	cursor: pointer;
+}
+
+.menuLineRotateUp {
+	width: 40px;
+	height: 2px;
+	background: var(--white);
+	transform: rotate(45deg);
+}
+
+.menuLineRotateDown {
+	width: 40px;
+	height: 2px;
+	background: var(--white);
+	transform: rotate(-45deg);
 }
 
 .flexMenuWrapper {
@@ -29,7 +52,7 @@
 .linksMenuWrapper {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 50px;
 }
 
 .flexMenuInner {
@@ -40,7 +63,7 @@
 }
 
 .linkMenu {
-  font-size: 40px;
+  font-size: 45px;
   font-family: 'Gilroy Medium';
   font-weight: 500;
   line-height: 48px;
@@ -57,4 +80,11 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
+}
+
+.menuArrowsBackground {
+	position: absolute;
+	bottom: 50px;
+	right: 60px;
+	z-index: -1;
 }

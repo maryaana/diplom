@@ -7,11 +7,24 @@
   font-size: 30px;
   line-height: 35px;
   color: var(--black);
+  transition: .3s;
+  cursor: pointer;
+}
+
+.titleProjectCard:hover {
+    color: var(--blue);
+    transition: .3s;
 }
 
 .backgroundProjectCard {
   width: 100%;
   height: calc(100% - 130px);
+  cursor: pointer;
+  transition: transform .2s;
+}
+
+.backgroundProjectCard:hover {
+    transform: scale(0.92);
 }
 
 .photoProjectCard {
@@ -29,4 +42,11 @@
   font-size: 18px;
   line-height: 26px;
   color: var(--black);
+  transition: .3s;
+  cursor: pointer;
+}
+
+.categoriesProjectCard:hover {
+    color: var(--blue);
+    transition: .3s;
 }

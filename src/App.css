@@ -1,5 +1,6 @@
 .headingWrapper {
   margin-top: 240px;
+  margin-bottom: 320px;
 }
 
 .sectionWrapper {
@@ -9,8 +10,13 @@
 }
 
 .subtitleWrapper {
-  margin-top: 320px;
+  margin-top: 200px;
   margin-bottom: 150px;
+}
+
+.statisticsAppWrapper {
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .maxWidthWrapperHeader {
@@ -19,6 +25,7 @@
   background-color: var(--white);
   position: fixed;
   top: 0;
+  z-index: 1;
 }
 
 .maxWidthWrapper {
@@ -38,7 +45,6 @@
   grid-auto-rows: 100px;
   grid-column-gap: 100px;
   grid-auto-flow: dense;
-  /* grid-row-gap: 50px; */
 }
 
 .projectCardsWrapper > div {

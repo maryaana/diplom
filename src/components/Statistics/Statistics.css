@@ -1,0 +1,22 @@
+.statisticsWrapper {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.statisticsQuantity {
+    color: var(--blue);
+    font-size: 40px;
+    line-height: 48px;
+    font-family: "Gilroy SemiBold";
+    font-weight: 600;
+}
+
+.statisticsDescription {
+    font-size: 18px;
+    line-height: 26px;
+    color: var(--black);
+    font-family: "Gilroy Light";
+    font-weight: 300;
+}

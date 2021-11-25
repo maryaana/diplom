@@ -1,0 +1,75 @@
+.formWrapper {
+    margin-top: -50px;
+    display: flex;
+    justify-content: start;
+}
+
+.moveRight {
+    width: 400px;
+}
+
+.inputWrapper {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputText {
+  width: 100%;
+  height: 60px;
+  padding: 17px 25px;
+  border: 1px solid var(--gray);
+  color: var(--black);
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.inputTextarea {
+  width: 100%;
+  height: 120px;
+  padding: 17px 25px;
+  border: 1px solid var(--gray);
+  resize: none;
+  transition: 0.3s;
+}
+
+.inputButton {
+  margin-top: 20px;
+  background-color: var(--blue);
+  height: 60px;
+  color: var(--white);
+  font-family: "Gilroy Medium";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  transition: 0.5s;
+}
+
+.inputButton:hover {
+  background-color: var(--dark-blue);
+  transition: 0.5s;
+}
+
+.inputSelect {
+  font-family: "Gilroy Medium";
+  font-weight: 500;
+  width: 100%;
+  height: 60px;
+  padding: 17px 25px;
+  border: 1px solid var(--gray);
+  color: var(--black);
+  font-size: 18px;
+  border: 1px solid var(--black);
+  transition: 0.3s;
+}
+
+.inputSelect:hover {
+    border: 1px solid var(--blue);
+    transition: 0.3s;
+}
+
+.inputSelect:focus {
+    border: 1px solid var(--blue);
+    transition: 0.3s;
+}

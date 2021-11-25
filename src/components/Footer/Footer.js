@@ -1,12 +1,19 @@
 import react from "react";
 import "./Footer.css";
 import ContactInfo from "../ContactInfo/ContactInfo";
+import logoDark from "./../../assets/logo_dark.png";
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="flexFooterWrapper">
-        <div className="logoFooter">logo</div>
+        
+        <div className="logoFooter">
+          <a href="#">
+            <img src={logoDark} />
+          </a>
+        </div>
+
         <div className="linksWrapper">
           <a className="linkFooter" href="#">
             Главная
