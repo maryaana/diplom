@@ -1,24 +1,22 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import { CSSTransition } from 'react-transition-group';
-import { Header, Footer, Menu } from './components';
+import { Header, Footer, Menu, Preloader } from './components';
 import { Routes, Route } from 'react-router-dom';
 import { MainPage } from './pages';
+import * as Utils from './Utils';
 
 function App() {
-  let [reviews, setReviews] = useState({});
+  let [appData, setAppData] = useState({
+    isLoading: true,
+  });
 
   useEffect(async () => {
-    let response = await fetch('/getReviews', { method: 'GET' });
-    response = await response.json();
-
-    if (!response.success) {
-      return;
-    }
-
-    setReviews({
-      ...reviews,
-      data: response.data,
+    let data = await Utils.AppManager.fetchEverything();
+    setAppData({
+      ...appData,
+      isLoading: false,
+      data,
     });
   }, []);
 
@@ -30,11 +28,23 @@ function App() {
 
   return (
     <>
+      <Preloader isLoading={appData.isLoading} />
+
       <div className="maxWidthWrapperHeader">
         <Header onMenuOpen={handleMenuLogic} />
       </div>
       <Routes>
-        <Route path="/" element={<MainPage />} />
+        <Route
+          path="/"
+          element={
+            <MainPage
+              cases={appData.data?.cases.data}
+              news={appData.data?.news.data}
+              reviews={appData.data?.reviews.data}
+              casesTags={appData.data?.casesTags.data}
+            />
+          }
+        />
       </Routes>
 
       <div className="backgroundDarkBlue">
