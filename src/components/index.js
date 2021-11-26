@@ -13,3 +13,4 @@ export { default as ProjectsList } from './ProjectsList/ProjectsList';
 export { default as ServicesList } from './ServicesList/ServicesList';
 export { default as Statistics } from './Statistics/Statistics';
 export { default as WantToCollaborate } from './WantToCollaborate/WantToCollaborate';
+export { default as Preloader } from './Preloader/Preloader';
