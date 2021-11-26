@@ -1,0 +1,28 @@
+.preloaderWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  font-size: 48px;
+  z-index: 100;
+}
+
+.preloaderAppearence-enter {
+  opacity: 0;
+}
+.preloaderAppearence-enter-active {
+  opacity: 1;
+  transition: opacity 500ms;
+}
+.preloaderAppearence-exit {
+  opacity: 1;
+}
+.preloaderAppearence-exit-active {
+  opacity: 0;
+  transition: opacity 500ms;
+}

@@ -2,18 +2,7 @@ import react, { useState } from 'react';
 import './Form.css';
 import { CSSTransition } from 'react-transition-group';
 
-const Form = () => {
-  const values = [
-    'Web',
-    'Mobile',
-    'UI/UX',
-    'Маркетинг',
-    'Автоматизация',
-    'Поддержка',
-    'Branding',
-    'SEO',
-  ];
-
+const Form = (props) => {
   let [content, setContent] = useState(-1);
   let [selected, setSelected] = useState(false);
 
@@ -41,7 +30,9 @@ const Form = () => {
         >
           <div className="formSelectRoot">
             <p>
-              {content === -1 ? 'Какие услуги вас интересуют?' : `Интересует: ${values[content]}`}
+              {content === -1
+                ? 'Какие услуги вас интересуют?'
+                : `Интересует: ${props.casesTags[content]?.tag}`}
             </p>
             <svg
               width="16"
@@ -60,7 +51,7 @@ const Form = () => {
             unmountOnExit
           >
             <div className="formSelectOptions">
-              {values.map((v, i) => (
+              {props.casesTags?.map((v, i) => (
                 <div
                   key={`option-${i}`}
                   className="formSelectOption"
@@ -70,7 +61,7 @@ const Form = () => {
                     handleSwitchNewFormState();
                   }}
                 >
-                  {v}
+                  {v.tag}
                 </div>
               ))}
             </div>
