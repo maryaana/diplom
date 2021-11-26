@@ -1,4 +1,5 @@
 export { default as BlogCard } from './BlogCard/BlogCard';
+export { default as BlogCardsList } from './BlogCardsList/BlogCardsList';
 export { default as ContactInfo } from './ContactInfo/ContactInfo';
 export { default as Footer } from './Footer/Footer';
 export { default as Form } from './Form/Form';
@@ -11,6 +12,6 @@ export { default as PartnersList } from './PartnersList/PartnersList';
 export { default as ProjectCard } from './ProjectCard/ProjectCard';
 export { default as ProjectsList } from './ProjectsList/ProjectsList';
 export { default as ServicesList } from './ServicesList/ServicesList';
-export { default as Statistics } from './Statistics/Statistics';
-export { default as WantToCollaborate } from './WantToCollaborate/WantToCollaborate';
+export { default as Statistic } from './Statistic/Statistic';
+export { default as ContactLink } from './ContactLink/ContactLink';
 export { default as Preloader } from './Preloader/Preloader';

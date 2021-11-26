@@ -1,4 +1,4 @@
-.headingWrapper {
+.headingMainPageWrapper {
   margin-top: 240px;
   margin-bottom: 320px;
 }
@@ -9,53 +9,14 @@
   margin: auto;
 }
 
-.subtitleWrapper {
-  margin-top: 200px;
-  margin-bottom: 150px;
-}
-
-.subtitleBlogWrapper {
+.subtitleMainPageBlogWrapper {
 	margin-top: 200px;
 	margin-bottom: 100px;
 }
 
-.appFlexBlogWrapper {
+.statisticMainPageWrapper {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 75px;
-}
-
-.statisticsAppWrapper {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.maxWidthWrapperHeader {
-  width: 100%;
-  margin: auto;
-  background-color: var(--white);
-  position: fixed;
-  top: 0;
-  z-index: 1;
-}
-
-.maxWidthWrapper {
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.backgroundDarkBlue {
-  background-color: var(--dark-blue);
-}
-
-.projectCardsWrapper {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: 100px;
-  grid-column-gap: 100px;
-  grid-auto-flow: dense;
 }
 
 .projectCardsWrapper > div {

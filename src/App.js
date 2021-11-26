@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
-import './App.css';
-import { CSSTransition } from 'react-transition-group';
-import { Header, Footer, Menu, Preloader } from './components';
-import { Routes, Route } from 'react-router-dom';
-import { MainPage } from './pages';
-import * as Utils from './Utils';
+import React, { useState, useEffect, useRef } from "react";
+import "./App.css";
+import { CSSTransition } from "react-transition-group";
+import { Header, Footer, Menu, Preloader } from "./components";
+import { Routes, Route } from "react-router-dom";
+import { MainPage } from "./pages";
+import * as Utils from "./Utils";
 
 function App() {
   let [appData, setAppData] = useState({
@@ -30,9 +30,8 @@ function App() {
     <>
       <Preloader isLoading={appData.isLoading} />
 
-      <div className="maxWidthWrapperHeader">
-        <Header onMenuOpen={handleMenuLogic} />
-      </div>
+      <Header onMenuOpen={handleMenuLogic} />
+      
       <Routes>
         <Route
           path="/"
@@ -47,12 +46,14 @@ function App() {
         />
       </Routes>
 
-      <div className="backgroundDarkBlue">
-        <div className="maxWidthWrapper">
-          <Footer />
-        </div>
-      </div>
-      <CSSTransition in={menu} timeout={300} classNames="menuAppearence" unmountOnExit>
+      <Footer />
+
+      <CSSTransition
+        in={menu}
+        timeout={300}
+        classNames="menuAppearence"
+        unmountOnExit
+      >
         <Menu onClose={handleMenuLogic} />
       </CSSTransition>
     </>

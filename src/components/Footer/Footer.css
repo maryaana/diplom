@@ -7,6 +7,12 @@
     padding-bottom: 50px;
 }
 
+.maxWidthFooterWrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
 .flexFooterWrapper {
     display: flex;
     justify-content: space-between;

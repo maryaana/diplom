@@ -1,20 +1,26 @@
-.wantToCollaborateConatainer {
+.contactLinkConatainer {
   width: 100%;
   height: 490px;
   background-color: var(--dark-blue);
   margin-top: 200px;
   padding-top: 100px;
   padding-bottom: 150px;
+}
+
+.contactLinkMaxWidthWrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
   position: relative;
 }
 
-.wantToCollaborateHeadingWrapper {
-    display: flex;
-    gap: 15px;
-    z-index: 2;
+.contactLinkHeadingWrapper {
+  display: flex;
+  gap: 15px;
+  z-index: 2;
 }
 
-.wantToCollaborateHeading {
+.contactLinkHeading {
   font-family: "Gilroy Medium";
   font-weight: 400;
   font-size: 50px;
@@ -22,7 +28,7 @@
   color: var(--white);
 }
 
-.wantToCollaborateLink {
+.contactLinkLink {
   font-family: "Gilroy Medium";
   font-weight: 400;
   font-size: 50px;
@@ -31,18 +37,18 @@
   border-bottom: 2px solid var(--green);
 }
 
-.wantToCollaborateContactInfoWrapper {
-    display: flex;
-    margin-top: 100px;
-    z-index: 2;
+.contactLinkContactInfoWrapper {
+  display: flex;
+  margin-top: 100px;
+  z-index: 2;
 }
 
-.wantToCollaborateContactContainer {
-    width: 400px;
+.contactLinkContactContainer {
+  width: 400px;
 }
 
-.wantToCollaborateArrowsBackground {
-    position: absolute;
-	bottom: 85px;
-	right: -160px;
+.contactLinkArrowsBackground {
+  position: absolute;
+  bottom: -45px;
+  right: -220px;
 }
