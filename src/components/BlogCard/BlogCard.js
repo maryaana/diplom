@@ -1,13 +1,15 @@
-import React from "react";
-import "./BlogCard.css";
+import React from 'react';
+import './BlogCard.css';
 
 const BlogCard = (props) => {
+  let base = '/news/';
+
   return (
     <>
       {
         <div className="blogCardContainer">
           <div className="photoBlogCard">
-            <img src={props.photo} />
+            <img src={`${base}${props.photo}`} />
           </div>
 
           <div className="categoryDateBlogCardWrapper">
