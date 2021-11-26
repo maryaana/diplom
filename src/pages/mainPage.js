@@ -11,7 +11,33 @@ import {
   Form,
 } from './../components';
 
-const MainPage = () => {
+const MainPage = (props) => {
+  let projectsConfig = [
+    {
+      background: '#00C46B',
+      row: 'span 6',
+    },
+    {
+      background: '#05208B',
+      row: 'span 8',
+    },
+    {
+      background: '#FFD002',
+      row: 'span 5',
+    },
+    {
+      background: '#D4D9DC',
+      row: 'span 7',
+    },
+    {
+      background: '#1C2026',
+      row: 'span 8',
+    },
+    {
+      background: '#F02529',
+      row: 'span 5',
+    },
+  ];
   return (
     <>
       <section className="sectionWrapper">
@@ -34,37 +60,16 @@ const MainPage = () => {
         </div>
 
         <div className="projectCardsWrapper">
-          <ProjectCard
-            title={'title'}
-            background={'#00C46B'}
-            row={'span 5'}
-            photo={'0.png'}
-            categories={['1', '2', '3']}
-          />
-
-          <ProjectCard
-            title={'title'}
-            background={'#05208B'}
-            row={'span 10'}
-            photo={'0.png'}
-            categories={['1', '2', '3']}
-          />
-
-          <ProjectCard
-            title={'title'}
-            background={'#00C46B'}
-            row={'span 8'}
-            photo={'0.png'}
-            categories={['1', '2', '3']}
-          />
-
-          <ProjectCard
-            title={'title'}
-            background={'#05208B'}
-            row={'span 4'}
-            photo={'0.png'}
-            categories={['1', '2', '3']}
-          />
+          {props.cases?.slice(0, 6).map((c, i) => (
+            <ProjectCard
+              title={c.name}
+              background={projectsConfig[i].background}
+              row={projectsConfig[i].row}
+              photo={c.avatar}
+              categories={c.tags.map((t) => t.tag)}
+              key={i}
+            />
+          ))}
         </div>
 
         <div className="subtitleWrapper">
@@ -94,32 +99,21 @@ const MainPage = () => {
 
       <section className="sectionWrapper">
         <PartnersList />
-        <LastReviewsGallery />
+        <LastReviewsGallery reviews={props.reviews} />
         <div className="subtitleBlogWrapper">
           <HeaderBlock subtitle={<span>блог</span>} description={<span>Анонсы и новости</span>} />
         </div>
 
         <div className="appFlexBlogWrapper">
-          <BlogCard
-            title={'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia'}
-            photo={''}
-            categoty={'Автоматизация'}
-            date={'23 ноября 2021'}
-          />
-
-          <BlogCard
-            title={'Duis aute irure dolor in reprehenderit in voluptate'}
-            photo={''}
-            categoty={'Разработка'}
-            date={'15 сентября 2021'}
-          />
-
-          <BlogCard
-            title={'Lorem ipsum dolor sit amet'}
-            photo={''}
-            categoty={'Маркетинг'}
-            date={'2 сентября 2021'}
-          />
+          {props.news?.map((n, i) => (
+            <BlogCard
+              key={i}
+              title={n.name}
+              photo={n.avatar}
+              categoty={n.tag}
+              date={n.creation_date}
+            />
+          ))}
         </div>
 
         <div className="subtitleWrapper">
@@ -129,7 +123,7 @@ const MainPage = () => {
           />
         </div>
 
-        <Form />
+        <Form casesTags={props.casesTags} />
       </section>
     </>
   );
