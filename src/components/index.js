@@ -15,3 +15,6 @@ export { default as ServicesList } from './ServicesList/ServicesList';
 export { default as Statistic } from './Statistic/Statistic';
 export { default as ContactLink } from './ContactLink/ContactLink';
 export { default as Preloader } from './Preloader/Preloader';
+export { default as ContentSelectableArea } from './ContentSelectableArea/ContentSelectableArea';
+export { default as SelectableTagsDisplay } from './SelectableTagsDisplay/SelectableTagsDisplay';
+export { default as SelectableContentDisplay } from './SelectableContentDisplay/SelectableContentDisplay';

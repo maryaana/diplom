@@ -10,13 +10,13 @@
 }
 
 .subtitleMainPageBlogWrapper {
-	margin-top: 200px;
-	margin-bottom: 100px;
+  margin-top: 200px;
+  margin-bottom: 100px;
 }
 
 .statisticMainPageWrapper {
-	display: flex;
-	flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .projectCardsWrapper > div {
@@ -25,4 +25,8 @@
 
 .projectCardsWrapper > div:nth-child(2) {
   margin-top: 200px;
+}
+
+.casesPageTopPadding {
+  padding-top: 200px;
 }

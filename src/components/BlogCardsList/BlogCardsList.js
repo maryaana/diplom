@@ -1,6 +1,6 @@
-import React from "react";
-import "./BlogCardsList.css";
-import { BlogCard } from "..";
+import React from 'react';
+import './BlogCardsList.css';
+import { BlogCard } from '..';
 
 const BlogCardsList = (props) => {
   return (
@@ -8,6 +8,7 @@ const BlogCardsList = (props) => {
       {props.news?.map((n, i) => (
         <BlogCard
           key={i}
+          link={''}
           title={n.name}
           photo={n.avatar}
           categoty={n.tag}

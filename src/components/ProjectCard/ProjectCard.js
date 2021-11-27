@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './ProjectCard.css';
 
 const ProjectCard = (props) => {
@@ -18,20 +19,22 @@ const ProjectCard = (props) => {
           className="projectCardContainer"
           style={{ gridRow: 1 + +props.row.replace(/span/, '') + ' span' }}
         >
-          <div
-            className="backgroundProjectCard"
-            style={{
-              background: props.background,
-            }}
-          >
-            <div className="photoProjectCard">
-              <img src={`${base}${props.photo}`} />
+          <Link to={props.link} className="projectCardContainerLink">
+            <div
+              className="backgroundProjectCard"
+              style={{
+                background: props.background,
+              }}
+            >
+              <div className="photoProjectCard">
+                <img src={`${base}${props.photo}`} />
+              </div>
             </div>
-          </div>
 
-          <div className="titleProjectCard">{props.title}</div>
+            <div className="titleProjectCard">{props.title}</div>
 
-          <div className="categoriesProjectCardWrapper">{categoriesList()}</div>
+            <div className="categoriesProjectCardWrapper">{categoriesList()}</div>
+          </Link>
         </div>
       }
     </>

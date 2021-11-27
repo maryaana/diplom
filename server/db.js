@@ -69,6 +69,21 @@ let database = {
     return null;
   },
 
+  getNewsTags: async () => {
+    let newsTags = null;
+    try {
+      newsTags = await connection.execute('select * from newsTags;', []);
+    } catch (e) {
+      console.log(e);
+    }
+
+    if (newsTags != null) {
+      return newsTags[0];
+    }
+
+    return null;
+  },
+
   getCasesTags: async () => {
     let casesTags = null;
     try {

@@ -47,6 +47,20 @@ app.get('/getNews', async (req, res) => {
   res.json({ success: true, data: news });
 });
 
+app.get('/getNewsTags', async (req, res) => {
+  let newsTags = null;
+  try {
+    newsTags = await db.getNewsTags();
+  } catch (e) {
+    console.log(e);
+    res.json({ success: false });
+  }
+
+  if (newsTags == null) res.json({ success: false });
+
+  res.json({ success: true, data: newsTags });
+});
+
 app.get('/getCasesTags', async (req, res) => {
   let casesTags = null;
   try {
