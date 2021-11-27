@@ -36,6 +36,10 @@ let AppManager = {
     return await Network.fetch('/getNews', 'GET');
   },
 
+  fetchNewsTags: async () => {
+    return await Network.fetch('/getNewsTags', 'GET');
+  },
+
   fetchReviews: async () => {
     return await Network.fetch('/getReviews', 'GET');
   },
@@ -45,6 +49,7 @@ let AppManager = {
     let casesTags = await this.fetchCasesTags();
     let bids = await this.fetchBids();
     let news = await this.fetchNews();
+    let newsTags = await this.fetchNewsTags();
     let reviews = await this.fetchReviews();
 
     return {
@@ -52,6 +57,7 @@ let AppManager = {
       casesTags,
       bids,
       news,
+      newsTags,
       reviews,
     };
   },
