@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { CSSTransition } from 'react-transition-group';
 import { Header, Footer, Menu, Preloader } from './components';
 import { Routes, Route } from 'react-router-dom';
-import { MainPage } from './pages';
+import { CatalogPage, MainPage } from './pages';
 import * as Utils from './Utils';
 
 function App() {
@@ -34,6 +34,36 @@ function App() {
         <Header onMenuOpen={handleMenuLogic} />
       </div>
       <Routes>
+        <Route
+          path="/cases/:tag/"
+          element={
+            <CatalogPage
+              type={'cases'}
+              base={'/cases/'}
+              contentMount={'info/'}
+              heading={'Кейсы'}
+              content={appData.data?.cases.data}
+              tags={appData.data?.casesTags.data}
+            />
+          }
+        />
+        <Route path="/cases/info/:id/" element={<div>Здарова</div>} />
+
+        {/* <Route
+          path="/news/:tag/"
+          element={
+            <CatalogPage
+              type={'news'}
+              base={'/news/'}
+              contentMount={'info/'}
+              heading={'Новости'}
+              content={appData.data?.news.data}
+              tags={appData.data?.newsTags.data}
+            />
+          }
+        />
+        <Route path="/news/info/:id/" element={<div>Здарова</div>} /> */}
+
         <Route
           path="/"
           element={
