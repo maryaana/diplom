@@ -49,7 +49,11 @@ function App() {
 				/>
 				<Route
 					path="/cases/info/:id"
-					element={WithDataRendering(CasePage, appData.data?.cases.data)}
+					element={WithDataRendering(
+						CasePage,
+						appData.data?.cases.data,
+						"cases/info/:id"
+					)}
 				/>
 
 				<Route
