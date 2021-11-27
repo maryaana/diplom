@@ -62,6 +62,7 @@ const MainPage = (props) => {
         <div className="projectCardsWrapper">
           {props.cases?.slice(0, 6).map((c, i) => (
             <ProjectCard
+              link={''}
               title={c.name}
               background={projectsConfig[i].background}
               row={projectsConfig[i].row}
@@ -108,6 +109,7 @@ const MainPage = (props) => {
           {props.news?.map((n, i) => (
             <BlogCard
               key={i}
+              link={''}
               title={n.name}
               photo={n.avatar}
               categoty={n.tag}
