@@ -14,3 +14,6 @@ export { default as ServicesList } from './ServicesList/ServicesList';
 export { default as Statistics } from './Statistics/Statistics';
 export { default as WantToCollaborate } from './WantToCollaborate/WantToCollaborate';
 export { default as Preloader } from './Preloader/Preloader';
+export { default as ContentSelectableArea } from './ContentSelectableArea/ContentSelectableArea';
+export { default as SelectableTagsDisplay } from './SelectableTagsDisplay/SelectableTagsDisplay';
+export { default as SelectableContentDisplay } from './SelectableContentDisplay/SelectableContentDisplay';
