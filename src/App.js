@@ -48,7 +48,7 @@ function App() {
         />
         <Route path="/cases/info/:id/" element={<div>Здарова</div>} />
 
-        {/* <Route
+        <Route
           path="/news/:tag/"
           element={
             <CatalogPage
@@ -61,7 +61,7 @@ function App() {
             />
           }
         />
-        <Route path="/news/info/:id/" element={<div>Здарова</div>} /> */}
+        <Route path="/news/info/:id/" element={<div>Здарова</div>} />
 
         <Route
           path="/"
