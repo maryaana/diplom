@@ -1,0 +1,62 @@
+.contactLinkConatainer {
+  width: 100%;
+  height: 490px;
+  background-color: var(--dark-blue);
+  margin-top: 200px;
+  padding-top: 100px;
+  padding-bottom: 150px;
+}
+
+.contactLinkMaxWidthWrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+}
+
+.contactLinkHeadingWrapper {
+  display: flex;
+  gap: 15px;
+  z-index: 2;
+}
+
+.contactLinkHeading {
+  font-family: "Gilroy Medium";
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 60px;
+  color: var(--white);
+}
+
+.contactLinkLink {
+  font-family: "Gilroy Medium";
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 60px;
+  color: var(--green);
+  border-bottom: 2px solid var(--green);
+  transition: .3s;
+}
+
+.contactLinkLink:hover {
+  color: var(--blue);
+  border-bottom: 2px solid var(--blue);
+  transition: .3s;
+}
+
+
+.contactLinkContactInfoWrapper {
+  display: flex;
+  margin-top: 100px;
+  z-index: 2;
+}
+
+.contactLinkContactContainer {
+  width: 400px;
+}
+
+.contactLinkArrowsBackground {
+  position: absolute;
+  bottom: -45px;
+  right: -220px;
+}

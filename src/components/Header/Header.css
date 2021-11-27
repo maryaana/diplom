@@ -1,27 +1,36 @@
+.maxWidthWrapperHeader {
+  width: 100%;
+  margin: auto;
+  background-color: var(--white);
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
 .wrapper {
-	display: flex;
-	justify-content: space-between;
-	padding: 30px 0;
-	max-width: 1200px;
-	align-items: center;
-	margin: 0 auto;
-	transition: 0.3s;
-	z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0;
+  max-width: 1200px;
+  align-items: center;
+  margin: 0 auto;
+  transition: 0.3s;
+  z-index: 5;
 }
 
 .menuButton {
-	width: 50px;
-	height: 14px;
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-	cursor: pointer;
-	z-index: 5;
+  width: 50px;
+  height: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+  z-index: 5;
 }
 
 .menuLine {
-	width: 50px;
-	height: 2px;
-	background: var(--blue);
-	z-index: 5;
+  width: 50px;
+  height: 2px;
+  background: var(--blue);
+  z-index: 5;
 }

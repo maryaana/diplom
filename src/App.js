@@ -30,9 +30,8 @@ function App() {
     <>
       <Preloader isLoading={appData.isLoading} />
 
-      <div className="maxWidthWrapperHeader">
-        <Header onMenuOpen={handleMenuLogic} />
-      </div>
+      <Header onMenuOpen={handleMenuLogic} />
+
       <Routes>
         <Route
           path="/cases/:tag/"
@@ -77,11 +76,8 @@ function App() {
         />
       </Routes>
 
-      <div className="backgroundDarkBlue">
-        <div className="maxWidthWrapper">
-          <Footer />
-        </div>
-      </div>
+      <Footer />
+
       <CSSTransition in={menu} timeout={300} classNames="menuAppearence" unmountOnExit>
         <Menu onClose={handleMenuLogic} />
       </CSSTransition>

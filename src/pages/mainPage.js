@@ -2,46 +2,20 @@ import React from 'react';
 import {
   HeaderBlock,
   Heading,
-  ProjectCard,
-  Statistics,
-  WantToCollaborate,
+  ProjectsList,
+  Statistic,
+  ContactLink,
   LastReviewsGallery,
   PartnersList,
-  BlogCard,
   Form,
+  BlogCardsList,
 } from './../components';
 
 const MainPage = (props) => {
-  let projectsConfig = [
-    {
-      background: '#00C46B',
-      row: 'span 6',
-    },
-    {
-      background: '#05208B',
-      row: 'span 8',
-    },
-    {
-      background: '#FFD002',
-      row: 'span 5',
-    },
-    {
-      background: '#D4D9DC',
-      row: 'span 7',
-    },
-    {
-      background: '#1C2026',
-      row: 'span 8',
-    },
-    {
-      background: '#F02529',
-      row: 'span 5',
-    },
-  ];
   return (
     <>
       <section className="sectionWrapper">
-        <div className="headingWrapper">
+        <div className="headingMainPageWrapper">
           <Heading>
             <h1>
               Агентство коммуникаций
@@ -50,81 +24,54 @@ const MainPage = (props) => {
           </Heading>
         </div>
 
-        <div className="subtitleWrapper">
-          <HeaderBlock
-            subtitle={<span>наши проекты</span>}
-            description={
-              <span>Работаем в разных областях: разработка, маркетинг, дизайн, автоматизация</span>
-            }
-          />
-        </div>
+        <HeaderBlock
+          subtitle={<span>наши проекты</span>}
+          description={
+            <span>Работаем в разных областях: разработка, маркетинг, дизайн, автоматизация</span>
+          }
+        />
 
-        <div className="projectCardsWrapper">
-          {props.cases?.slice(0, 6).map((c, i) => (
-            <ProjectCard
-              link={''}
-              title={c.name}
-              background={projectsConfig[i].background}
-              row={projectsConfig[i].row}
-              photo={c.avatar}
-              categories={c.tags.map((t) => t.tag)}
-              key={i}
-            />
-          ))}
-        </div>
+        <ProjectsList cases={props.cases} />
 
-        <div className="subtitleWrapper">
-          <HeaderBlock
-            subtitle={<span>об агентстве</span>}
-            description={
-              <span>
-                DGTL-squad — это it-продакшн полного цикла, с собственной аналитикой, дизайном, веб-
-                и мобильной разработкой
-              </span>
-            }
-          />
-        </div>
+        <HeaderBlock
+          subtitle={<span>об агентстве</span>}
+          description={
+            <span>
+              DGTL-squad — это it-продакшн полного цикла, с собственной аналитикой, дизайном, веб- и
+              мобильной разработкой
+            </span>
+          }
+        />
 
-        <div className="statisticsAppWrapper">
-          <Statistics quantity={'топ 500'} description={'лучших агентств'} />
-          <Statistics quantity={'5 лет'} description={'опыта работы'} />
-          <Statistics quantity={'> 30'} description={'завершенных проектов'} />
+        <div className="statisticMainPageWrapper">
+          <Statistic quantity={'топ 500'} description={'лучших агентств'} />
+          <Statistic quantity={'5 лет'} description={'опыта работы'} />
+          <Statistic quantity={'> 30'} description={'завершенных проектов'} />
         </div>
       </section>
 
-      <div className="backgroundDarkBlue">
-        <div className="maxWidthWrapper">
-          <WantToCollaborate />
-        </div>
-      </div>
+      <ContactLink />
 
       <section className="sectionWrapper">
         <PartnersList />
+
+        <HeaderBlock
+          subtitle={<span>отзывы</span>}
+          description={<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>}
+        />
+
         <LastReviewsGallery reviews={props.reviews} />
-        <div className="subtitleBlogWrapper">
+
+        <div className="subtitleMainPageBlogWrapper">
           <HeaderBlock subtitle={<span>блог</span>} description={<span>Анонсы и новости</span>} />
         </div>
 
-        <div className="appFlexBlogWrapper">
-          {props.news?.map((n, i) => (
-            <BlogCard
-              key={i}
-              link={''}
-              title={n.name}
-              photo={n.avatar}
-              categoty={n.tag}
-              date={n.creation_date}
-            />
-          ))}
-        </div>
+        <BlogCardsList news={props.news} />
 
-        <div className="subtitleWrapper">
-          <HeaderBlock
-            subtitle={<span>форма</span>}
-            description={<span>Обсудим проект? Оставьте заявку и мы вам перезвоним</span>}
-          />
-        </div>
-
+        <HeaderBlock
+          subtitle={<span>форма</span>}
+          description={<span>Обсудим проект? Оставьте заявку и мы вам перезвоним</span>}
+        />
         <Form casesTags={props.casesTags} />
       </section>
     </>

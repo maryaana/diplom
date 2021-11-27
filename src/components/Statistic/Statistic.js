@@ -1,7 +1,7 @@
 import react from "react";
-import "./Statistics.css";
+import "./Statistic.css";
 
-function Statistics(props) {
+function Statistic(props) {
   return (
     <>
       {
@@ -14,4 +14,4 @@ function Statistics(props) {
   );
 }
 
-export default Statistics;
+export default Statistic;

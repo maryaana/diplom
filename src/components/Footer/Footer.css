@@ -7,15 +7,15 @@
     padding-bottom: 50px;
 }
 
+.maxWidthFooterWrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
 .flexFooterWrapper {
     display: flex;
     justify-content: space-between;
-}
-
-.logoFooter {
-    font-size: 24px;
-    color: var(--white);
-    text-transform: uppercase;
 }
 
 .linksWrapper {

@@ -1,20 +1,25 @@
+.subtitleWrapper {
+  margin-top: 200px;
+  margin-bottom: 150px;
+}
+
 .headerBlockWrapper {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .subtitle {
-    font-family: "Gilroy SemiBold";
-    font-weight: 600;
-    color: var(--blue);
-    width: 400px;
+  font-family: "Gilroy SemiBold";
+  font-weight: 600;
+  color: var(--blue);
+  width: 400px;
 }
 
 .headerBlockDescription {
-    font-family: "Gilroy Medium";
-    font-weight: 500;
-    color: var(--black);
-    font-size: 45px;
-    line-height: 58px;
-    width: 800px;
+  font-family: "Gilroy Medium";
+  font-weight: 500;
+  color: var(--black);
+  font-size: 45px;
+  line-height: 58px;
+  width: 800px;
 }
