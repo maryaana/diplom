@@ -22,7 +22,9 @@ const Header = (props) => {
     <div className="maxWidthWrapperHeader">
       <div className="wrapper" ref={wrapper}>
         <div className="logo">
-          <img src={logo} />
+          <a href="#">
+            <img src={logo} />
+          </a>
         </div>
         <div className="menuButton" onClick={props.onMenuOpen}>
           <div className="menuLine"></div>

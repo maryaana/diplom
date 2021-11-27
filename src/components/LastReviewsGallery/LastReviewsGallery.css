@@ -1,16 +1,31 @@
 .lastReviewsGalleryWrapper {
   width: 100%;
   display: flex;
-  justify-content: right;
+  justify-content: start;
+}
+
+.moveRightReviews {
+  width: 400px;
 }
 
 .lastReviewsGalleryInner {
-  position: relative;
-  width: 50%;
+  width: 800px;
+}
+
+.lastReviewsGalleryDecor {
+  font-weight: 800;
+  font-size: 90px;
+  line-height: 58px;
+  color: var(--blue);
+  user-select: none;
 }
 
 .lastReviewsGalleryInnerContent {
   height: 200px;
+}
+
+.lastReviewsGalleryContentText {
+  color: var(--black);
 }
 
 .lastReviewsGalleryInnerControls {
