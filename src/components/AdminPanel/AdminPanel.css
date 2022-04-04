@@ -1,0 +1,119 @@
+.admin__authWrapper {
+  width: 100%;
+  padding-top: 150px;
+}
+
+.admin__enterHeading {
+  margin: auto;
+  margin-bottom: 70px;
+  text-align: center;
+  font-family: 'Gilroy Medium';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 58px;
+}
+
+.admin__authInput {
+  display: block;
+  margin: auto;
+  width: 400px;
+  margin-bottom: 20px;
+}
+
+.admin__enterButton {
+  margin: auto;
+  width: 400px;
+  height: 60px;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #009fd7;
+  transition: 0.2s;
+  cursor: pointer;
+  font-family: 'Gilroy SemiBold';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 26px;
+  color: #ffffff;
+}
+
+.admin__enterButton:hover {
+  opacity: 0.7;
+  transition: 0.2s;
+}
+
+.admin__contentWrapper {
+  padding-top: 150px;
+}
+
+.admin__contentInner {
+  position: relative;
+  width: 1200px;
+  margin: auto;
+}
+
+.admin__createNew {
+  width: max-content;
+  margin: auto;
+  font-family: 'Gilroy Semibold';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 26px;
+  color: #009fd7;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-top: 100px;
+  margin-bottom: 32px;
+}
+
+.admin__createNew:hover {
+  opacity: 0.7;
+  transition: 0.2s;
+}
+
+.admin__logout {
+  width: max-content;
+  margin: auto;
+  font-family: 'Gilroy SemiBold';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 26px;
+  color: #ff4848;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.admin__logout:hover {
+  opacity: 0.7;
+  transition: 0.2s;
+}
+
+.admin__heading {
+  margin-bottom: 40px;
+  font-family: 'Gilroy ExtraBold';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 45px;
+  line-height: 58px;
+  color: #424242;
+}
+
+.admin__filters {
+  display: flex;
+  gap: 40px;
+}
+
+.admin__filter {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.admin__filter_active {
+  color: #009fd7;
+  transition: 0.2s;
+}

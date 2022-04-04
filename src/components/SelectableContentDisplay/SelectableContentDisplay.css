@@ -1,4 +1,10 @@
 .newsWrapper {
+  margin-top: 100px;
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
+  gap: 75px;
+}
+
+.projectCardsWrapper {
+  margin-top: 100px;
 }

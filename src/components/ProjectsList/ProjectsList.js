@@ -35,7 +35,7 @@ const ProjectsList = (props) => {
       {props.cases?.slice(0, 6).map((c, i) => (
         <ProjectCard
           title={c.name}
-          link={''}
+          link={`/cases/info/${c.id}`}
           background={projectsConfig[i].background}
           row={projectsConfig[i].row}
           photo={c.avatar}

@@ -61,6 +61,28 @@ let AppManager = {
       reviews,
     };
   },
+
+  authAdmin: async (body) => {
+    return await Network.fetch('/authAdmin', 'POST', body);
+  },
+
+  cases: {
+    delete: async (id) => {
+      return await Network.fetch('/cases/delete', 'POST', { id });
+    },
+  },
+
+  news: {
+    delete: async (id) => {
+      return await Network.fetch('/news/delete', 'POST', { id });
+    },
+  },
+
+  bids: {
+    delete: async (id) => {
+      return await Network.fetch('/bids/delete', 'POST', { id });
+    },
+  },
 };
 
 export { Network, AppManager };

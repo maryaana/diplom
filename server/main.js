@@ -3,6 +3,8 @@ const app = express();
 const port = 3001;
 const db = require('./db.js');
 
+app.use(express.json());
+
 app.get('/getReviews', async (req, res) => {
   let reviews = null;
   try {
@@ -87,6 +89,51 @@ app.get('/getCases', async (req, res) => {
   if (cases == null) res.json({ success: false });
 
   res.json({ success: true, data: cases });
+});
+
+app.post('/authAdmin', async (req, res) => {
+  if (req.body.login !== '1' || req.body.password !== '1') {
+    res.json({ success: false });
+    return;
+  }
+
+  res.json({ success: true, data: true });
+});
+
+app.post('/cases/delete', async (req, res) => {
+  try {
+    let result = await db.deleteCase(req.body.id);
+  } catch (e) {
+    console.log(e);
+    res.json({ success: false });
+    return;
+  }
+
+  res.json({ success: true });
+});
+
+app.post('/news/delete', async (req, res) => {
+  try {
+    let result = await db.deleteNews(req.body.id);
+  } catch (e) {
+    console.log(e);
+    res.json({ success: false });
+    return;
+  }
+
+  res.json({ success: true });
+});
+
+app.post('/bids/delete', async (req, res) => {
+  try {
+    let result = await db.deleteBid(req.body.id);
+  } catch (e) {
+    console.log(e);
+    res.json({ success: false });
+    return;
+  }
+
+  res.json({ success: true });
 });
 
 app.listen(port, () => {

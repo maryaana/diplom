@@ -137,6 +137,19 @@ let database = {
     }
     return data;
   },
+
+  deleteCase: async (id) => {
+    await connection.execute('delete from casestocasestags where cases_id=?;', [id]);
+    return await connection.execute('delete from cases where id=?;', [id]);
+  },
+
+  deleteNews: async (id) => {
+    return await connection.execute('delete from news where id=?;', [id]);
+  },
+
+  deleteBid: async (id) => {
+    return await connection.execute('delete from bids where id=?;', [id]);
+  },
 };
 
 module.exports = database;

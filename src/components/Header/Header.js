@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import logo from "./../../logo.png";
 import "./Header.css";
 
@@ -22,9 +23,9 @@ const Header = (props) => {
     <div className="maxWidthWrapperHeader">
       <div className="wrapper" ref={wrapper}>
         <div className="logo">
-          <a href="#">
+          <Link to="/">
             <img src={logo} />
-          </a>
+          </Link>
         </div>
         <div className="menuButton" onClick={props.onMenuOpen}>
           <div className="menuLine"></div>

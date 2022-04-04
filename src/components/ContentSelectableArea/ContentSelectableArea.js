@@ -6,7 +6,6 @@ import './ContentSelectableArea.css';
 const ContentSelectableArea = (props) => {
   const params = useParams();
 
-  console.log(params);
   return (
     <section>
       <SelectableTagsDisplay
