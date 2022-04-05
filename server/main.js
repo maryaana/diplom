@@ -2,8 +2,20 @@ const express = require('express');
 const app = express();
 const port = 3001;
 const db = require('./db.js');
+const fs = require('fs');
+const fileupload = require('express-fileupload');
+const multer = require('multer');
 
+const uploadCases = multer({ dest: './../public/projects/' });
+const uploadNews = multer({ dest: './../public/news/' });
+
+app.use(fileupload());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+const publicPath = './../public';
+const casesPath = 'projects';
+const newsPath = 'news';
 
 app.get('/getReviews', async (req, res) => {
   let reviews = null;
@@ -103,6 +115,9 @@ app.post('/authAdmin', async (req, res) => {
 app.post('/cases/delete', async (req, res) => {
   try {
     let result = await db.deleteCase(req.body.id);
+    fs.unlink(`${publicPath}/${casesPath}/${req.body.id}.png`, function (err) {
+      if (err) return console.log(err);
+    });
   } catch (e) {
     console.log(e);
     res.json({ success: false });
@@ -112,9 +127,37 @@ app.post('/cases/delete', async (req, res) => {
   res.json({ success: true });
 });
 
+app.post('/cases/create', async (req, res) => {
+  // try {
+  //   let result = await db.deleteCase(req.body.id);
+  //   fs.unlink(`${publicPath}/${casesPath}/${req.body.id}.png`, function (err) {
+  //     if (err) return console.log(err);
+  //   });
+  // } catch (e) {
+  //   console.log(e);
+  //   res.json({ success: false });
+  //   return;
+  // }
+
+  // res.json({ success: true });
+
+  console.log(req.files);
+  console.log(req.body);
+  console.log(req.body.name);
+  console.log(req.body.file);
+  console.log(req.body.moreInfo);
+  console.log(req.body.description);
+  console.log(req.body.categories);
+
+  res.json({ success: false });
+});
+
 app.post('/news/delete', async (req, res) => {
   try {
     let result = await db.deleteNews(req.body.id);
+    fs.unlink(`${publicPath}/${newsPath}/${req.body.id}.png`, function (err) {
+      if (err) return console.log(err);
+    });
   } catch (e) {
     console.log(e);
     res.json({ success: false });

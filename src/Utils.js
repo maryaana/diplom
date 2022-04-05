@@ -1,10 +1,16 @@
+import axios from 'axios';
+
 let Network = {
-  fetch: async (path, method, body) => {
+  fetch: async (path, method, body, isFormData) => {
     let options = {
       method,
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: !isFormData
+        ? {
+            'Content-Type': 'application/json',
+          }
+        : {
+            'Content-Type': 'multipart/form-data',
+          },
     };
 
     if (method.toUpperCase() === 'POST' || method.toUpperCase() === 'PUT')
@@ -70,11 +76,26 @@ let AppManager = {
     delete: async (id) => {
       return await Network.fetch('/cases/delete', 'POST', { id });
     },
+    create: async (body) => {
+      let formData = new FormData();
+      console.log(body);
+
+      formData.append('file', body.file);
+      formData.append('name', body.name);
+      formData.append('moreInfo', body.moreInfo);
+      formData.append('description', body.description);
+      formData.append('categories', body.categories);
+
+      return await axios.post('/cases/create', 'POST', { formData });
+    },
   },
 
   news: {
     delete: async (id) => {
       return await Network.fetch('/news/delete', 'POST', { id });
+    },
+    create: async (body) => {
+      return await Network.fetch('/news/create', 'POST', body);
     },
   },
 

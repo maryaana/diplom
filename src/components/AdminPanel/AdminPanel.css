@@ -117,3 +117,105 @@
   color: #009fd7;
   transition: 0.2s;
 }
+
+.admin__creationSubHeading {
+  font-family: 'Gilroy Medium';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 35px;
+  color: #424242;
+  margin-bottom: 100px;
+}
+
+.admin__creationWrapper {
+  display: flex;
+}
+
+.admin__creationLeft {
+  width: 400px;
+}
+
+.admin__creationRight {
+  width: 700px;
+  margin-left: 100px;
+}
+
+.admin__creationBlock {
+  margin-bottom: 40px;
+}
+
+.admin__creationHint {
+  font-family: 'Gilroy Light';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #424242;
+  margin-bottom: 10px;
+}
+
+.admin__loadLabel {
+  width: 400px;
+  height: 400px;
+  background: rgba(160, 191, 215, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Gilroy SemiBold';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 26px;
+  color: #009cd5;
+  cursor: pointer;
+}
+
+.admin__creationTextArea {
+  height: 312px;
+}
+
+.admin__creationSubmit {
+  width: 400px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Gilroy SemiBold';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 26px;
+  color: #ffffff;
+  background: #009fd7;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.admin__creationSubmit:hover {
+  opacity: 0.7;
+  transition: 0.2s;
+}
+
+.admin__creationCancel {
+  width: 100%;
+  margin-top: 20px;
+  font-family: 'Gilroy SemiBold';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  color: #ff4848;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.admin__creationCancel:hover {
+  opacity: 0.7;
+  transition: 0.2s;
+}
+
+.admin__formSelectRoot {
+  height: 60px;
+}

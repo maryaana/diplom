@@ -30,3 +30,10 @@
 .casesPageTopPadding {
   padding-top: 200px;
 }
+
+.tagsSelectorOverflowHandler {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-right: 15px;
+}

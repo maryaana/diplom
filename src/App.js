@@ -46,7 +46,55 @@ function App() {
     }
 
     if (category === 'news') {
-      let data = appData.data?.cases.news;
+      let data = appData.data?.news.data;
+      data = data.filter((elem) => elem.id !== id);
+      setAppData({
+        ...appData,
+        data: {
+          ...appData.data,
+          news: {
+            ...appData.data.news,
+            data,
+          },
+        },
+      });
+    }
+
+    if (category === 'bids') {
+      let data = appData.data?.bids.data;
+      data = data.filter((elem) => elem.id !== id);
+      setAppData({
+        ...appData,
+        data: {
+          ...appData.data,
+          bids: {
+            ...appData.data.bids,
+            data,
+          },
+        },
+      });
+    }
+  };
+
+  const handleElemCreation = (category, id) => {
+    if (category === 'cases') {
+      let data = appData.data?.cases.data;
+      data = data.filter((elem) => elem.id !== id);
+      console.log(data, appData);
+      setAppData({
+        ...appData,
+        data: {
+          ...appData.data,
+          cases: {
+            ...appData.data.cases,
+            data,
+          },
+        },
+      });
+    }
+
+    if (category === 'news') {
+      let data = appData.data?.news.data;
       data = data.filter((elem) => elem.id !== id);
       setAppData({
         ...appData,
@@ -123,7 +171,10 @@ function App() {
               cases={appData.data?.cases.data}
               news={appData.data?.news.data}
               bids={appData.data?.bids.data}
+              casesTags={appData.data?.casesTags.data}
+              newsTags={appData.data?.newsTags.data}
               onElemDeleted={handleElemDeletion}
+              onElemCreated={handleElemCreation}
             />
           }
         />
