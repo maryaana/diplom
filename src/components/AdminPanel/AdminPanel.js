@@ -73,15 +73,16 @@ const AdminPanel = (props) => {
 
     if (category === 'cases') {
       let response = await Utils.AppManager.cases.create(createData);
-      if (response.success) {
-        props.onElemDeleted(category, createData);
-      }
+      // if (response.success) {
+      //   props.onElemDeleted(category, createData);
+      // }
+      console.log(response);
     }
     if (category === 'news') {
       let response = await Utils.AppManager.news.create(createData);
-      if (response.success) {
-        props.onElemDeleted(category, createData);
-      }
+      // if (response.success) {
+      //   props.onElemDeleted(category, createData);
+      // }
     }
     setCreateData({});
     setCreateModalIsOpened(false);
@@ -120,87 +121,92 @@ const AdminPanel = (props) => {
     <div className="admin__contentWrapper">
       {createModalIsOpened && (
         <div className="admin__contentInner">
-          <h3 className="admin__heading">Админ-панель</h3>
-          <h4 className="admin__creationSubHeading">
-            Создание {category === 'cases' ? 'проекта' : 'новости'}
-          </h4>
-          <div className="admin__creationWrapper">
-            <div className="admin__creationLeft">
-              <div className="admin__creationBlock">
-                <p className="admin__creationHint">
-                  Название {category === 'cases' ? 'проекта' : 'новости'}
-                </p>
-                <input
-                  className="inputText"
-                  onChange={handleCreationDataChange}
-                  name="name"
-                  placeholder="Lorem Ipsum dolor sit"
-                />
-              </div>
-              <div className="admin__creationBlock">
-                <p className="admin__creationHint">
-                  {category === 'cases' ? 'Ссылка на проект' : 'Дата создания'}
-                </p>
-                <input
-                  className="inputText"
-                  onChange={handleCreationDataChange}
-                  name="moreInfo"
-                  placeholder={category === 'cases' ? 'https://loremipsum.ru' : '11.12.2021'}
-                />
-              </div>
-              <div className="admin__creationBlock">
-                <p className="admin__creationHint">
-                  {category === 'cases' ? 'Категории проектов' : 'Категория записи'}
-                </p>
-                <div>
-                  {category === 'cases' ? (
-                    <CasesCategoriesSelector
-                      tags={props.casesTags}
-                      onNewState={handleNewCasesCategory}
-                    />
-                  ) : (
-                    <NewsCategoriesSelector
-                      tags={props.newsTags}
-                      onNewState={handleNewNewsCategory}
-                    />
-                  )}
+          <form action="/cases/create" method="POST">
+            <h3 className="admin__heading">Админ-панель</h3>
+            <h4 className="admin__creationSubHeading">
+              Создание {category === 'cases' ? 'проекта' : 'новости'}
+            </h4>
+            <div className="admin__creationWrapper">
+              <div className="admin__creationLeft">
+                <div className="admin__creationBlock">
+                  <p className="admin__creationHint">
+                    Название {category === 'cases' ? 'проекта' : 'новости'}
+                  </p>
+                  <input
+                    className="inputText"
+                    onChange={handleCreationDataChange}
+                    name="name"
+                    placeholder="Lorem Ipsum dolor sit"
+                  />
                 </div>
-              </div>
-              <div className="admin__creationBlock">
-                <p className="admin__creationHint">
-                  Главная фотография {category === 'cases' ? 'проекта' : 'новости'}
-                </p>
-                <label className="admin__loadLabel" for="file">
-                  Загрузить фотографию
-                </label>
+                <div className="admin__creationBlock">
+                  <p className="admin__creationHint">
+                    {category === 'cases' ? 'Ссылка на проект' : 'Дата создания'}
+                  </p>
+                  <input
+                    className="inputText"
+                    onChange={handleCreationDataChange}
+                    name="moreInfo"
+                    placeholder={category === 'cases' ? 'https://loremipsum.ru' : '11.12.2021'}
+                  />
+                </div>
+                <div className="admin__creationBlock">
+                  <p className="admin__creationHint">
+                    {category === 'cases' ? 'Категории проектов' : 'Категория записи'}
+                  </p>
+                  <div>
+                    {category === 'cases' ? (
+                      <CasesCategoriesSelector
+                        tags={props.casesTags}
+                        onNewState={handleNewCasesCategory}
+                      />
+                    ) : (
+                      <NewsCategoriesSelector
+                        tags={props.newsTags}
+                        onNewState={handleNewNewsCategory}
+                      />
+                    )}
+                  </div>
+                </div>
+                <div className="admin__creationBlock">
+                  <p className="admin__creationHint">
+                    Главная фотография {category === 'cases' ? 'проекта' : 'новости'}
+                  </p>
+                  <label className="admin__loadLabel" for="file">
+                    Загрузить фотографию
+                  </label>
+                  <input
+                    id="file"
+                    onChange={handleCreationDataFileChange}
+                    name="file"
+                    type="file"
+                    accept="image/png"
+                    style={{ display: 'none' }}
+                  />
+                </div>
                 <input
-                  id="file"
-                  onChange={handleCreationDataFileChange}
-                  name="file"
-                  type="file"
-                  accept="image/png"
-                  style={{ display: 'none' }}
+                  type="submit"
+                  className="admin__creationSubmit"
+                  value="Сохранить"
+                  onClick={handleCreate}
+                ></input>
+                <p className="admin__creationCancel" onClick={resetCreation}>
+                  Отмена
+                </p>
+              </div>
+              <div className="admin__creationRight">
+                <p className="admin__creationHint">
+                  Описание {category === 'cases' ? 'проекта' : 'новости'} (до 1000 знаков)
+                </p>
+                <textarea
+                  onChange={handleCreationDataChange}
+                  name="description"
+                  className="inputTextarea admin__creationTextArea"
+                  placeholder="Описание"
                 />
               </div>
-              <div className="admin__creationSubmit" onClick={handleCreate}>
-                Сохранить
-              </div>
-              <p className="admin__creationCancel" onClick={resetCreation}>
-                Отмена
-              </p>
             </div>
-            <div className="admin__creationRight">
-              <p className="admin__creationHint">
-                Описание {category === 'cases' ? 'проекта' : 'новости'} (до 1000 знаков)
-              </p>
-              <textarea
-                onChange={handleCreationDataChange}
-                name="description"
-                className="inputTextarea admin__creationTextArea"
-                placeholder="Описание"
-              />
-            </div>
-          </div>
+          </form>
         </div>
       )}
 

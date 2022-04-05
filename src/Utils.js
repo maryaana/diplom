@@ -8,9 +8,7 @@ let Network = {
         ? {
             'Content-Type': 'application/json',
           }
-        : {
-            'Content-Type': 'multipart/form-data',
-          },
+        : {},
     };
 
     if (method.toUpperCase() === 'POST' || method.toUpperCase() === 'PUT')
@@ -86,7 +84,7 @@ let AppManager = {
       formData.append('description', body.description);
       formData.append('categories', body.categories);
 
-      return await axios.post('/cases/create', 'POST', { formData });
+      return await Network.fetch('/cases/create', 'POST', formData, true);
     },
   },
 

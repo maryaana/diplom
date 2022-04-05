@@ -3,15 +3,9 @@ const app = express();
 const port = 3001;
 const db = require('./db.js');
 const fs = require('fs');
-const fileupload = require('express-fileupload');
-const multer = require('multer');
+const formidable = require('formidable');
 
-const uploadCases = multer({ dest: './../public/projects/' });
-const uploadNews = multer({ dest: './../public/news/' });
-
-app.use(fileupload());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 const publicPath = './../public';
 const casesPath = 'projects';
@@ -128,28 +122,15 @@ app.post('/cases/delete', async (req, res) => {
 });
 
 app.post('/cases/create', async (req, res) => {
-  // try {
-  //   let result = await db.deleteCase(req.body.id);
-  //   fs.unlink(`${publicPath}/${casesPath}/${req.body.id}.png`, function (err) {
-  //     if (err) return console.log(err);
-  //   });
-  // } catch (e) {
-  //   console.log(e);
-  //   res.json({ success: false });
-  //   return;
-  // }
+  const form = new formidable.IncomingForm();
 
-  // res.json({ success: true });
-
-  console.log(req.files);
-  console.log(req.body);
-  console.log(req.body.name);
-  console.log(req.body.file);
-  console.log(req.body.moreInfo);
-  console.log(req.body.description);
-  console.log(req.body.categories);
-
-  res.json({ success: false });
+  form.parse(req, (err, fields, files) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    res.json({ fields, files });
+  });
 });
 
 app.post('/news/delete', async (req, res) => {
