@@ -32,7 +32,7 @@ function App() {
     if (category === 'cases') {
       let data = appData.data?.cases.data;
       data = data.filter((elem) => elem.id !== id);
-      console.log(data, appData);
+
       setAppData({
         ...appData,
         data: {
@@ -76,48 +76,122 @@ function App() {
     }
   };
 
-  const handleElemCreation = (category, id) => {
+  const handleElemCreation = (category, body, id) => {
+    alert('here');
     if (category === 'cases') {
-      let data = appData.data?.cases.data;
-      data = data.filter((elem) => elem.id !== id);
-      console.log(data, appData);
+      let newData = [...appData.data?.cases.data];
+      let tags = appData.data?.casesTags.data;
+      let mappedTags = body.categories.split(',').map((cat) => tags.find((t) => +t.id === +cat));
+
+      newData.push({
+        id,
+        avatar: `${id}.png`,
+        description: body.description,
+        link: body.moreInfo,
+        name: body.name,
+        tags: mappedTags,
+      });
+
       setAppData({
         ...appData,
         data: {
           ...appData.data,
           cases: {
             ...appData.data.cases,
-            data,
+            data: newData,
           },
         },
       });
     }
 
     if (category === 'news') {
-      let data = appData.data?.news.data;
-      data = data.filter((elem) => elem.id !== id);
+      let newData = [...appData.data?.news.data];
+      let tags = appData.data?.newsTags.data;
+      let mappedTags = `${body.categories}`
+        .split(',')
+        .map((cat) => tags.find((t) => +t.id === +cat));
+
+      newData.push({
+        id,
+        avatar: `${id}.png`,
+        description: body.description,
+        creation_date: body.moreInfo,
+        name: body.name,
+        newsTags_id: mappedTags[0].id,
+        tag: mappedTags[0].tag,
+      });
+
       setAppData({
         ...appData,
         data: {
           ...appData.data,
           news: {
             ...appData.data.news,
-            data,
+            data: newData,
+          },
+        },
+      });
+    }
+  };
+
+  const handleElemEdition = (category, body, id, name) => {
+    if (category === 'cases') {
+      let newData = [...appData.data?.cases.data];
+
+      let tags = appData.data?.casesTags.data;
+
+      let mappedTags = body.categories.split(',').map((cat) => tags.find((t) => +t.id === +cat));
+
+      newData = newData.filter((d) => +d.id !== +id);
+
+      newData.push({
+        id,
+        avatar: name,
+        description: body.description,
+        link: body.moreInfo ?? body.link,
+        name: body.name,
+        tags: mappedTags,
+      });
+
+      setAppData({
+        ...appData,
+        isLoading: false,
+        data: {
+          ...appData.data,
+          cases: {
+            ...appData.data.cases,
+            data: newData.sort((a, b) => a.id - b.id),
           },
         },
       });
     }
 
-    if (category === 'bids') {
-      let data = appData.data?.bids.data;
-      data = data.filter((elem) => elem.id !== id);
+    if (category === 'news') {
+      let newData = [...appData.data?.news.data];
+      let tags = appData.data?.newsTags.data;
+      let mappedTags = `${body.categories}`
+        .split(',')
+        .map((cat) => tags.find((t) => +t.id === +cat));
+
+      newData = newData.filter((d) => +d.id !== +id);
+
+      newData.push({
+        id,
+        avatar: name,
+        description: body.description,
+        creation_date: body.moreInfo ?? body.creation_date,
+        name: body.name,
+        newsTags_id: mappedTags[0].id,
+        tag: mappedTags[0].tag,
+      });
+
       setAppData({
         ...appData,
         data: {
           ...appData.data,
-          bids: {
-            ...appData.data.bids,
-            data,
+          news: {
+            ...appData.data.news,
+            data: newData.sort((a, b) => a.id - b.id),
           },
         },
       });
@@ -175,6 +249,7 @@ function App() {
               newsTags={appData.data?.newsTags.data}
               onElemDeleted={handleElemDeletion}
               onElemCreated={handleElemCreation}
+              onElemEdited={handleElemEdition}
             />
           }
         />

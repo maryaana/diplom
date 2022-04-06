@@ -3,9 +3,9 @@ const app = express();
 const port = 3001;
 const db = require('./db.js');
 const fs = require('fs');
-const formidable = require('formidable');
 
-app.use(express.json());
+app.use(express.json({ limit: '50mb' }));
+app.use(express.urlencoded({ limit: '50mb' }));
 
 const publicPath = './../public';
 const casesPath = 'projects';
@@ -106,7 +106,7 @@ app.post('/authAdmin', async (req, res) => {
   res.json({ success: true, data: true });
 });
 
-app.post('/cases/delete', async (req, res) => {
+app.post('/casesDelete', async (req, res) => {
   try {
     let result = await db.deleteCase(req.body.id);
     fs.unlink(`${publicPath}/${casesPath}/${req.body.id}.png`, function (err) {
@@ -121,19 +121,48 @@ app.post('/cases/delete', async (req, res) => {
   res.json({ success: true });
 });
 
-app.post('/cases/create', async (req, res) => {
-  const form = new formidable.IncomingForm();
+app.post('/casesCreate', async (req, res) => {
+  try {
+    let result = await db.createCase(req.body);
 
-  form.parse(req, (err, fields, files) => {
-    if (err) {
+    let base64 = req.body.file.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/);
+    var buffer = new Buffer.from(base64[2], 'base64');
+    fs.writeFile(`${publicPath}/${casesPath}/${result}.png`, buffer, 'base64', function (err) {
       console.log(err);
-      return;
-    }
-    res.json({ fields, files });
-  });
+    });
+
+    res.json({ success: true, id: result });
+  } catch (e) {
+    console.log(e);
+    res.json({ success: false });
+    return;
+  }
 });
 
-app.post('/news/delete', async (req, res) => {
+app.post('/casesEdit', async (req, res) => {
+  try {
+    let [name, oldName] = await db.editCase(req.body);
+
+    let base64 = req.body.file.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/);
+    var buffer = new Buffer.from(base64[2], 'base64');
+
+    // fs.unlink(`${publicPath}/${casesPath}/${oldName}`, function (err) {
+    //   console.log(err);
+    // });
+
+    fs.writeFile(`${publicPath}/${casesPath}/${name}`, buffer, 'base64', function (err) {
+      console.log(err);
+    });
+
+    res.json({ success: true, id: req.body.id, name });
+  } catch (e) {
+    console.log(e);
+    res.json({ success: false });
+    return;
+  }
+});
+
+app.post('/newsDelete', async (req, res) => {
   try {
     let result = await db.deleteNews(req.body.id);
     fs.unlink(`${publicPath}/${newsPath}/${req.body.id}.png`, function (err) {
@@ -148,7 +177,49 @@ app.post('/news/delete', async (req, res) => {
   res.json({ success: true });
 });
 
-app.post('/bids/delete', async (req, res) => {
+app.post('/newsCreate', async (req, res) => {
+  try {
+    let result = await db.createNews(req.body);
+
+    let base64 = req.body.file.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/);
+    var buffer = new Buffer.from(base64[2], 'base64');
+    fs.writeFile(`${publicPath}/${newsPath}/${result}.png`, buffer, 'base64', function (err) {
+      console.log(err);
+    });
+
+    res.json({ success: true, id: result });
+  } catch (e) {
+    console.log(e);
+    res.json({ success: false });
+    return;
+  }
+});
+
+app.post('/newsEdit', async (req, res) => {
+  console.log(req.body);
+  try {
+    let [name, oldName] = await db.editNews(req.body);
+
+    let base64 = req.body.file.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/);
+    var buffer = new Buffer.from(base64[2], 'base64');
+
+    // fs.unlink(`${publicPath}/${casesPath}/${oldName}`, function (err) {
+    //   console.log(err);
+    // });
+
+    fs.writeFile(`${publicPath}/${newsPath}/${name}`, buffer, 'base64', function (err) {
+      console.log(err);
+    });
+
+    res.json({ success: true, id: req.body.id, name });
+  } catch (e) {
+    console.log(e);
+    res.json({ success: false });
+    return;
+  }
+});
+
+app.post('/bidsDelete', async (req, res) => {
   try {
     let result = await db.deleteBid(req.body.id);
   } catch (e) {

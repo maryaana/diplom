@@ -72,34 +72,31 @@ let AppManager = {
 
   cases: {
     delete: async (id) => {
-      return await Network.fetch('/cases/delete', 'POST', { id });
+      return await Network.fetch('/casesDelete', 'POST', { id });
     },
     create: async (body) => {
-      let formData = new FormData();
-      console.log(body);
-
-      formData.append('file', body.file);
-      formData.append('name', body.name);
-      formData.append('moreInfo', body.moreInfo);
-      formData.append('description', body.description);
-      formData.append('categories', body.categories);
-
-      return await Network.fetch('/cases/create', 'POST', formData, true);
+      return await Network.fetch('/casesCreate', 'POST', body);
+    },
+    re: async (body) => {
+      return await Network.fetch('/casesEdit', 'POST', body);
     },
   },
 
   news: {
     delete: async (id) => {
-      return await Network.fetch('/news/delete', 'POST', { id });
+      return await Network.fetch('/newsDelete', 'POST', { id });
     },
     create: async (body) => {
-      return await Network.fetch('/news/create', 'POST', body);
+      return await Network.fetch('/newsCreate', 'POST', body);
+    },
+    re: async (body) => {
+      return await Network.fetch('/newsEdit', 'POST', body);
     },
   },
 
   bids: {
     delete: async (id) => {
-      return await Network.fetch('/bids/delete', 'POST', { id });
+      return await Network.fetch('/bidsDelete', 'POST', { id });
     },
   },
 };

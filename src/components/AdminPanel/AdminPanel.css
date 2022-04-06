@@ -88,6 +88,10 @@
   transition: 0.2s;
 }
 
+.admin__logout:nth-child(2):last-child {
+  margin-top: 100px;
+}
+
 .admin__logout:hover {
   opacity: 0.7;
   transition: 0.2s;
@@ -169,6 +173,10 @@
   line-height: 26px;
   color: #009cd5;
   cursor: pointer;
+}
+
+.admin__loadLabel img {
+  object-fit: contain;
 }
 
 .admin__creationTextArea {

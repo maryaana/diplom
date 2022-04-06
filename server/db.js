@@ -143,6 +143,82 @@ let database = {
     return await connection.execute('delete from cases where id=?;', [id]);
   },
 
+  createCase: async (body) => {
+    const result = await connection.execute(
+      'insert into cases(name, description, avatar, link) values(?, ?, "#", ?);',
+      [body.name, body.description, body.moreInfo]
+    );
+
+    body.categories.split(',').forEach(async (element) => {
+      await connection.execute(
+        'insert into casestocasestags(cases_id, casesTags_id) values(?, ?);',
+        [result[0].insertId, element]
+      );
+    });
+
+    await connection.execute('update cases set avatar=? where id=?;', [
+      `${result[0].insertId}.png`,
+      result[0].insertId,
+    ]);
+
+    return result[0].insertId;
+  },
+
+  editCase: async (body) => {
+    const result = await connection.execute(
+      'update cases set name=?, description=?, link=? where id=?;',
+      [body.name, body.description, body.moreInfo ?? body.link, body.id]
+    );
+
+    await connection.execute('delete from casestocasestags where cases_id=?;', [body.id]);
+
+    body.categories.split(',').forEach(async (element) => {
+      await connection.execute(
+        'insert into casestocasestags(cases_id, casesTags_id) values(?, ?);',
+        [body.id, element]
+      );
+    });
+
+    const nameTime = new Date().getTime();
+    const name = `${body.id}-edited-${nameTime}.png`;
+
+    const oldName = await connection.execute('select avatar from cases where id=?;', [body.id]);
+
+    await connection.execute('update cases set avatar=? where id=?;', [name, body.id]);
+
+    return [name, oldName[0][0].avatar];
+  },
+
+  createNews: async (body) => {
+    const result = await connection.execute(
+      'insert into news(name, description, avatar, creation_date, newsTags_id) values(?, ?, "#", ?, ?);',
+      [body.name, body.description, body.moreInfo, body.categories]
+    );
+
+    await connection.execute('update news set avatar=? where id=?;', [
+      `${result[0].insertId}.png`,
+      result[0].insertId,
+    ]);
+
+    return result[0].insertId;
+  },
+
+  editNews: async (body) => {
+    const result = await connection.execute(
+      'update news set name=?, description=?, creation_date=?, newsTags_id=? where id=?;',
+      [body.name, body.description, body.moreInfo ?? body.creation_date, body.categories, body.id]
+    );
+
+    const nameTime = new Date().getTime();
+    const name = `${body.id}-edited-${nameTime}.png`;
+
+    const oldName = await connection.execute('select avatar from news where id=?;', [body.id]);
+
+    await connection.execute('update news set avatar=? where id=?;', [name, body.id]);
+
+    return [name, oldName[0][0].avatar];
+  },
+
   deleteNews: async (id) => {
     return await connection.execute('delete from news where id=?;', [id]);
   },

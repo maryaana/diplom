@@ -17,6 +17,10 @@ export const AdminContent = ({ content, category, onDelete, onEdit }) => {
     setDeleteId(id);
   };
 
+  const handleEdit = (elem) => {
+    onEdit(elem);
+  };
+
   const handleModalDelete = () => {
     setDeleteModalIsOpen(false);
     onDelete(deleteId);
@@ -38,7 +42,7 @@ export const AdminContent = ({ content, category, onDelete, onEdit }) => {
                     <p className="adminContent__tag">{tag.tag}</p>
                   ))}
                 </div>
-                <div className="adminContent__edit">
+                <div className="adminContent__edit" onClick={() => handleEdit(elem)}>
                   <svg
                     width="30"
                     height="30"
@@ -106,11 +110,9 @@ export const AdminContent = ({ content, category, onDelete, onEdit }) => {
                 <h5 className="adminContent__name">{elem.name}</h5>
                 <div className="adminContent__meta">
                   <p className="adminContent__metaTag">{elem.tag}</p>
-                  <p className="adminContent__metaDate">
-                    {new Date(+elem.creation_date * 1000).toLocaleDateString('ru-RU')}
-                  </p>
+                  <p className="adminContent__metaDate">{elem.creation_date}</p>
                 </div>
-                <div className="adminContent__edit">
+                <div className="adminContent__edit" onClick={() => handleEdit(elem)}>
                   <svg
                     width="30"
                     height="30"
