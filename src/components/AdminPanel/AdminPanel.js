@@ -26,6 +26,7 @@ const AdminPanel = (props) => {
 
   const handleAdminAuth = async () => {
     let response = await Utils.AppManager.authAdmin(adminData);
+    if (!response.data) alert('Неверный логин или пароль!');
     setIsAdmin(response.data ?? false);
   };
 

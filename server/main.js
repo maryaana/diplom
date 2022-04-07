@@ -98,7 +98,7 @@ app.get('/getCases', async (req, res) => {
 });
 
 app.post('/authAdmin', async (req, res) => {
-  if (req.body.login !== '1' || req.body.password !== '1') {
+  if (req.body.login !== 'design' || req.body.password !== 'cringe') {
     res.json({ success: false });
     return;
   }
@@ -212,6 +212,18 @@ app.post('/newsEdit', async (req, res) => {
     });
 
     res.json({ success: true, id: req.body.id, name });
+  } catch (e) {
+    console.log(e);
+    res.json({ success: false });
+    return;
+  }
+});
+
+app.post('/bidsCreate', async (req, res) => {
+  try {
+    let result = await db.createBid(req.body);
+
+    res.json({ success: true, id: result });
   } catch (e) {
     console.log(e);
     res.json({ success: false });

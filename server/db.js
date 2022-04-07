@@ -226,6 +226,15 @@ let database = {
   deleteBid: async (id) => {
     return await connection.execute('delete from bids where id=?;', [id]);
   },
+
+  createBid: async (body) => {
+    const result = await connection.execute(
+      'insert into bids(name, phone, about, casesTags_id) values(?, ?, ?, ?);',
+      [body.name, body.phone, body.description, body.tagId]
+    );
+
+    return result[0].insertId;
+  },
 };
 
 module.exports = database;

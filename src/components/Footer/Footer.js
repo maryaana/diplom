@@ -1,7 +1,8 @@
-import react from "react";
-import "./Footer.css";
-import ContactInfo from "../ContactInfo/ContactInfo";
-import logoDark from "./../../assets/logo_dark.png";
+import react from 'react';
+import './Footer.css';
+import ContactInfo from '../ContactInfo/ContactInfo';
+import logoDark from './../../assets/logo_dark.png';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -9,48 +10,48 @@ const Footer = () => {
       <div className="maxWidthFooterWrapper">
         <div className="flexFooterWrapper">
           <div className="logoFooter">
-            <a href="#">
+            <Link to="/">
               <img src={logoDark} />
-            </a>
+            </Link>
           </div>
 
           <div className="linksWrapper">
-            <a className="linkFooter" href="#">
+            <Link className="linkFooter" to="/">
               Главная
-            </a>
-            <a className="linkFooter" href="#">
+            </Link>
+            <Link className="linkFooter" to="/about">
               Об агентстве
-            </a>
-            <a className="linkFooter" href="#">
+            </Link>
+            <Link className="linkFooter" to="/services">
               Услуги
-            </a>
-            <a className="linkFooter" href="#">
+            </Link>
+            <Link className="linkFooter" to="/cases/all">
               Кейсы
-            </a>
-            <a className="linkFooter" href="#">
+            </Link>
+            <Link className="linkFooter" to="/news/all">
               Блог
-            </a>
-            <a className="linkFooter" href="#">
+            </Link>
+            <Link className="linkFooter" to="/#form">
               Контакты
-            </a>
+            </Link>
           </div>
 
           <div className="contactFooterWrapper">
             <ContactInfo
               subtitle={<span>почта</span>}
-              link={"#"}
+              link={'#'}
               contact={<span>info@digitalsquad.ru</span>}
             />
 
             <ContactInfo
               subtitle={<span>телефон</span>}
-              link={"#"}
+              link={'#'}
               contact={<span>8 800 123 45 67</span>}
             />
 
             <ContactInfo
               subtitle={<span>instagram</span>}
-              link={"#"}
+              link={'#'}
               contact={<span>@dgtlsquad</span>}
             />
           </div>

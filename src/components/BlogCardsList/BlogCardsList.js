@@ -8,7 +8,7 @@ const BlogCardsList = (props) => {
       {props.news?.map((n, i) => (
         <BlogCard
           key={i}
-          link={''}
+          link={`/news/info/${n.id}`}
           title={n.name}
           photo={n.avatar}
           categoty={n.tag}

@@ -18,3 +18,4 @@ export { default as Preloader } from './Preloader/Preloader';
 export { default as ContentSelectableArea } from './ContentSelectableArea/ContentSelectableArea';
 export { default as SelectableTagsDisplay } from './SelectableTagsDisplay/SelectableTagsDisplay';
 export { default as SelectableContentDisplay } from './SelectableContentDisplay/SelectableContentDisplay';
+export { Accordeon } from './Accordeon/Accordeon';

@@ -7,6 +7,9 @@ import { CasePage, CatalogPage, MainPage } from './pages';
 import * as Utils from './Utils';
 import { WithDataRendering } from './HOC';
 import AdminPanel from './components/AdminPanel/AdminPanel';
+import newsPage from './pages/newsPage';
+import AboutPage from './pages/aboutPage';
+import ServicesPage from './pages/ServicesPage';
 
 function App() {
   let [appData, setAppData] = useState({
@@ -198,6 +201,34 @@ function App() {
     }
   };
 
+  const handleBidCreated = (body, id) => {
+    let newData = [...appData.data?.bids.data];
+
+    newData.push({
+      id,
+      name: body.name,
+      phone: body.phone,
+      about: body.description,
+      casesTags_id: body.tagId,
+    });
+
+    setAppData({
+      ...appData,
+      data: {
+        ...appData.data,
+        bids: {
+          ...appData.data.bids,
+          data: newData,
+        },
+      },
+    });
+  };
+
+  const handleNewBid = async (data) => {
+    let response = await Utils.AppManager.bids.create(data);
+    if (response.success) handleBidCreated(data, response.id);
+  };
+
   return (
     <>
       <Preloader isLoading={appData.isLoading} />
@@ -236,7 +267,10 @@ function App() {
             />
           }
         />
-        <Route path="/news/info/:id" element={<div>Здарова</div>} />
+        <Route
+          path="/news/info/:id"
+          element={WithDataRendering(newsPage, appData.data?.news.data, 'news/info/:id')}
+        />
 
         <Route
           path="/admin"
@@ -254,6 +288,14 @@ function App() {
           }
         />
 
+        <Route path="/about" element={<AboutPage cases={appData.data?.cases.data} />} />
+
+        <Route
+          path="/services"
+          element={<ServicesPage casesTags={appData.data?.casesTags.data} />}
+          onNewBid={handleNewBid}
+        />
+
         <Route
           path="/"
           element={
@@ -262,6 +304,7 @@ function App() {
               news={appData.data?.news.data}
               reviews={appData.data?.reviews.data}
               casesTags={appData.data?.casesTags.data}
+              onNewBid={handleNewBid}
             />
           }
         />

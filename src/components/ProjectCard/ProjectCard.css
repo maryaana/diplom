@@ -1,5 +1,6 @@
 .projectCardContainer {
   width: 100%;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
 }
@@ -51,6 +52,12 @@
 .photoProjectCard {
   transition: 1s;
   transition-delay: 0.1s;
+}
+
+.photoProjectCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .categoriesProjectCardWrapper {

@@ -1,8 +1,9 @@
-import react from "react";
-import "./Menu.css";
-import logoDark from "./../../assets/logo_dark.png";
-import ContactInfo from "../ContactInfo/ContactInfo";
-import arrows from "./../../assets/arrows.svg";
+import react from 'react';
+import './Menu.css';
+import logoDark from './../../assets/logo_dark.png';
+import ContactInfo from '../ContactInfo/ContactInfo';
+import arrows from './../../assets/arrows.svg';
+import { Link } from 'react-router-dom';
 
 const Menu = (props) => {
   return (
@@ -10,7 +11,9 @@ const Menu = (props) => {
       <div className="menuContainer">
         <div className="menuLogoCloseWrapper">
           <div className="logoMenu">
-            <img src={logoDark} />
+            <Link to="/">
+              <img src={logoDark} />
+            </Link>
           </div>
 
           <div className="menuCloseButton" onClick={props.onClose}>
@@ -22,42 +25,42 @@ const Menu = (props) => {
         <div className="flexMenuWrapper">
           <div className="flexMenuInner">
             <div className="linksMenuWrapper">
-              <a className="linkMenu" href="#">
+              <Link className="linkMenu" to="/" onClick={props.onClose}>
                 Главная
-              </a>
-              <a className="linkMenu" href="#">
+              </Link>
+              <Link className="linkMenu" to="/about" onClick={props.onClose}>
                 Об агентстве
-              </a>
-              <a className="linkMenu" href="#">
+              </Link>
+              <Link className="linkMenu" to="/services" onClick={props.onClose}>
                 Услуги
-              </a>
-              <a className="linkMenu" href="#">
+              </Link>
+              <Link className="linkMenu" to="/cases/all" onClick={props.onClose}>
                 Кейсы
-              </a>
-              <a className="linkMenu" href="#">
+              </Link>
+              <Link className="linkMenu" to="/news/all" onClick={props.onClose}>
                 Блог
-              </a>
-              <a className="linkMenu" href="#">
+              </Link>
+              <Link className="linkMenu" to="/#form" onClick={props.onClose}>
                 Контакты
-              </a>
+              </Link>
             </div>
 
             <div className="contactMenuWrapper">
               <ContactInfo
                 subtitle={<span>почта</span>}
-                link={"#"}
+                link={'#'}
                 contact={<span>info@digitalsquad.ru</span>}
               />
 
               <ContactInfo
                 subtitle={<span>телефон</span>}
-                link={"#"}
+                link={'#'}
                 contact={<span>8 800 123 45 67</span>}
               />
 
               <ContactInfo
                 subtitle={<span>instagram</span>}
-                link={"#"}
+                link={'#'}
                 contact={<span>@dgtlsquad</span>}
               />
             </div>

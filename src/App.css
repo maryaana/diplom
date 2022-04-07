@@ -37,3 +37,278 @@
   overflow: hidden;
   padding-right: 15px;
 }
+
+.casePage__wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding-top: 150px;
+}
+
+.casesPage__heading {
+  font-family: 'Gilroy ExtraBold';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 50px;
+  line-height: 64px;
+  color: #424242;
+}
+
+.casesPage__meta {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 60px;
+  margin-bottom: 80px;
+}
+
+.casesPage__link {
+  font-family: 'Gilroy Medium';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 35px;
+  color: #009fd7;
+}
+
+.casesPage__tags {
+  display: flex;
+  gap: 30px;
+}
+
+.casesPage__tag {
+  font-family: 'Gilroy Light';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 26px;
+  color: #424242;
+}
+
+.casesPage__image {
+  width: 500px;
+  height: auto;
+  margin-left: calc(50% - 250px);
+  margin-bottom: -50px;
+}
+
+.newsPage__text {
+  font-family: 'Gilroy Medium';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 32px;
+  /* or 160% */
+
+  color: #424242;
+  margin-bottom: 80px;
+}
+
+.newsPage__image {
+  width: 100%;
+  height: 100%;
+  max-width: 800px;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+.newsPage__meta {
+  display: flex;
+  gap: 30px;
+  margin-top: 60px;
+  margin-bottom: 80px;
+}
+
+.newsPage__tag {
+  font-family: 'Gilroy Medium';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  color: #009fd7;
+}
+
+.newsPage__date {
+  font-family: 'Gilroy Light';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 26px;
+  color: #424242;
+}
+
+.about__textWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+}
+
+.about__text {
+  width: 800px;
+  font-family: 'Gilroy Medium';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 58px;
+  color: #424242;
+}
+
+.about__image {
+  margin-top: 150px;
+  margin-bottom: 200px;
+  width: 100%;
+  max-height: 500px;
+}
+
+.about__projectWrapper {
+  margin-top: 100px;
+  margin-bottom: 200px;
+}
+
+.about__projectImage {
+  width: 100%;
+  height: 100%;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+.about__projectName {
+  margin-top: 40px;
+  font-family: 'Gilroy SemiBold';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 35px;
+  color: #424242;
+}
+
+.about__projectTags {
+  display: flex;
+  gap: 30px;
+}
+
+.about__projectTag {
+  font-family: 'Gilroy Light';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 26px;
+  color: #424242;
+}
+
+.about__bottom {
+  margin-top: 350px;
+}
+
+.services__serviceWrapper {
+  display: flex;
+  margin-bottom: 100px;
+}
+
+.services__serviceName {
+  width: 400px;
+  height: 20px;
+  font-family: 'Gilroy Medium';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 28px;
+  color: #424242;
+}
+
+.services__serviceInner {
+  width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  column-gap: 10px;
+}
+
+.services__serviceContent {
+  width: 192px;
+  display: flex;
+  gap: 15px;
+}
+
+.services__image {
+  margin: unset;
+}
+
+.services__background {
+  padding-top: 100px;
+  padding-bottom: 150px;
+  background: #003b81;
+  margin-bottom: -100px;
+}
+
+.services__backgroundContent {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+}
+
+.services__backgroundTitle {
+  width: 300px;
+  font-family: 'Gilroy SemiBold';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 26px;
+  color: #00e073;
+}
+
+.services__backgroundMain {
+  width: 900px;
+}
+
+.services__backgroundHeading {
+  margin-bottom: 100px;
+  font-family: 'Gilroy Medium';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 58px;
+  color: #ffffff;
+}
+
+.services__backgroundBox {
+  position: relative;
+  border-top: 1px solid rgba(160, 191, 215, 0.3);
+  padding: 50px 0;
+  display: flex;
+  min-height: 230px;
+}
+
+.services__backgroundNumber {
+  width: 20px;
+  font-family: 'Gilroy Medium';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 35px;
+  color: #00e073;
+}
+
+.services__backgroundSubtitle {
+  width: 200px;
+  margin-left: 30px;
+  font-family: 'Gilroy Medium';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 35px;
+  color: #fff;
+}
+
+.services__backgroundText {
+  width: calc(100% - 200px - 20px - 30px - 100px);
+  margin-left: 100px;
+  font-family: 'Gilroy Medium';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  color: #ffffff;
+}

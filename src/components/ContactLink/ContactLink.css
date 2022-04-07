@@ -5,6 +5,7 @@
   margin-top: 200px;
   padding-top: 100px;
   padding-bottom: 150px;
+  overflow: hidden;
 }
 
 .contactLinkMaxWidthWrapper {
@@ -21,7 +22,7 @@
 }
 
 .contactLinkHeading {
-  font-family: "Gilroy Medium";
+  font-family: 'Gilroy Medium';
   font-weight: 400;
   font-size: 50px;
   line-height: 60px;
@@ -29,21 +30,20 @@
 }
 
 .contactLinkLink {
-  font-family: "Gilroy Medium";
+  font-family: 'Gilroy Medium';
   font-weight: 400;
   font-size: 50px;
   line-height: 60px;
   color: var(--green);
   border-bottom: 2px solid var(--green);
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .contactLinkLink:hover {
   color: var(--blue);
   border-bottom: 2px solid var(--blue);
-  transition: .3s;
+  transition: 0.3s;
 }
-
 
 .contactLinkContactInfoWrapper {
   display: flex;

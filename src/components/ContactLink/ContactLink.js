@@ -1,7 +1,8 @@
-import react from "react";
-import "./ContactLink.css";
-import ContactInfo from "../ContactInfo/ContactInfo";
-import arrows from "./../../assets/arrows.svg";
+import react from 'react';
+import './ContactLink.css';
+import ContactInfo from '../ContactInfo/ContactInfo';
+import arrows from './../../assets/arrows.svg';
+import { Link } from 'react-router-dom';
 
 const ContactLink = () => {
   return (
@@ -9,30 +10,30 @@ const ContactLink = () => {
       <div className="contactLinkMaxWidthWrapper">
         <div className="contactLinkHeadingWrapper">
           <p className="contactLinkHeading">Хотите посотрудничать?</p>
-          <a className="contactLinkLink" href="#">
+          <Link className="contactLinkLink" to="/#form">
             Связаться с нами.
-          </a>
+          </Link>
         </div>
 
         <div className="contactLinkContactInfoWrapper">
           <div className="contactLinkContactContainer">
             <ContactInfo
               subtitle={<span>почта</span>}
-              link={"#"}
+              link={'#'}
               contact={<span>info@digitalsquad.ru</span>}
             />
           </div>
           <div className="contactLinkContactContainer">
             <ContactInfo
               subtitle={<span>телефон</span>}
-              link={"#"}
+              link={'#'}
               contact={<span>8 800 123 45 67</span>}
             />
           </div>
           <div className="contactLinkContactContainer">
             <ContactInfo
               subtitle={<span>instagram</span>}
-              link={"#"}
+              link={'#'}
               contact={<span>@dgtlsquad</span>}
             />
           </div>

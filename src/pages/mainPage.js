@@ -72,7 +72,7 @@ const MainPage = (props) => {
           subtitle={<span>форма</span>}
           description={<span>Обсудим проект? Оставьте заявку и мы вам перезвоним</span>}
         />
-        <Form casesTags={props.casesTags} />
+        <Form casesTags={props.casesTags} id="form" onNewBid={props.onNewBid} />
       </section>
     </>
   );

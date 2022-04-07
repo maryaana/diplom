@@ -98,6 +98,9 @@ let AppManager = {
     delete: async (id) => {
       return await Network.fetch('/bidsDelete', 'POST', { id });
     },
+    create: async (body) => {
+      return await Network.fetch('/bidsCreate', 'POST', body);
+    },
   },
 };
 

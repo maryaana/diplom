@@ -5,6 +5,9 @@ import { CSSTransition } from 'react-transition-group';
 const Form = (props) => {
   let [content, setContent] = useState(-1);
   let [selected, setSelected] = useState(false);
+  let [acc, setAcc] = useState({});
+
+  const { id } = props;
 
   function resetForm() {
     setContent(-1);
@@ -14,12 +17,38 @@ const Form = (props) => {
     setSelected(!selected);
   }
 
+  const handleChange = (e) => {
+    setAcc({ ...acc, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = () => {
+    if (!acc.name || !acc.phone || content === -1) {
+      alert('Пожалуйста, введите все поля для отправки');
+      return;
+    }
+    props.onNewBid({ ...acc, tagId: content });
+    setAcc({});
+    setContent(-1);
+  };
+
   return (
-    <div className="formWrapper">
+    <div className="formWrapper" id={id}>
       <div className="moveRight"></div>
       <div className="inputWrapper">
-        <input className="inputText" placeholder="Имя*"></input>
-        <input className="inputText" placeholder="Телефон*"></input>
+        <input
+          className="inputText"
+          name="name"
+          value={acc.name ?? ''}
+          onChange={handleChange}
+          placeholder="Имя*"
+        ></input>
+        <input
+          className="inputText"
+          name="phone"
+          value={acc.phone ?? ''}
+          onChange={handleChange}
+          placeholder="Телефон*"
+        ></input>
 
         <div
           className={['formCustomSelect', selected && 'formCustomSelectActive'].join(' ')}
@@ -32,7 +61,7 @@ const Form = (props) => {
             <p>
               {content === -1
                 ? 'Какие услуги вас интересуют?'
-                : `Интересует: ${props.casesTags[content]?.tag}`}
+                : `Интересует: ${props.casesTags[content - 1]?.tag}`}
             </p>
             <svg
               width="16"
@@ -57,7 +86,7 @@ const Form = (props) => {
                   className="formSelectOption"
                   onClick={(e) => {
                     e.stopPropagation();
-                    setContent(i);
+                    setContent(v.id);
                     handleSwitchNewFormState();
                   }}
                 >
@@ -68,9 +97,17 @@ const Form = (props) => {
           </CSSTransition>
         </div>
 
-        <textarea className="inputTextarea" placeholder="Расскажите о вашей компании"></textarea>
+        <textarea
+          className="inputTextarea"
+          name="description"
+          value={acc.description ?? ''}
+          onChange={handleChange}
+          placeholder="Расскажите о вашей компании"
+        ></textarea>
 
-        <button className="inputButton">Отправить</button>
+        <button className="inputButton" onClick={handleSubmit}>
+          Отправить
+        </button>
       </div>
     </div>
   );
