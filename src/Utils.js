@@ -13,6 +13,7 @@ let Network = {
 
     if (method.toUpperCase() === 'POST' || method.toUpperCase() === 'PUT')
       options['body'] = JSON.stringify(body);
+      
     try {
       let response = await fetch(path, options);
       return await response.json();
